@@ -1,53 +1,99 @@
-// - image: put a screenshot/thumbnail in src/assets/projects/ and import it, or leave null for a placeholder
-// - link: URL to the live project, case study, or repo
-// - detail: shown on the full project page (src/components/ProjectDetail.jsx) for projects that have one
+// All project content lives here. Images are imported so Vite fingerprints them.
+//
+// Shape per project:
+//   slug, category, title, titleAccent (portion of the title shown in the accent colour),
+//   subtitle, description, image (card thumbnail), link (internal route), layout
+//   ('mobile' = phone screenshots side-by-side, 'web' = wide screenshots stacked),
+//   footerBubble (per-project line in the contact band),
+//   detail: { hero, longDescription, role, course, platform, tools, keyFeatures[], designSystem }
+//   keyFeatures[]: { title, description, image (first), images[] }
+//   designSystem: { color:{blurb,swatches[]}, typography:{blurb,font,image},
+//                   uiElements:{blurb,images[]}, gallery:{label:'Illustrations'|'Icons',blurb,images[]} }
 
-import siitHero from '../assets/projects/siit-super-app-hero.webp'
-import siitAcademicPlanning from '../assets/projects/siit-academic-planning.webp'
-import siitCourseEnrollment from '../assets/projects/siit-course-enrollment.webp'
-import siitLibraryBooking from '../assets/projects/siit-library-booking.webp'
-import siitLearningResources from '../assets/projects/siit-learning-resources.webp'
+// --- SIIT Super App ---
+import siitHero from '../assets/projects/siit/hero.webp'
+import siitAcademicPlanning1 from '../assets/projects/siit/academic-planning-1.webp'
+import siitAcademicPlanning2 from '../assets/projects/siit/academic-planning-2.webp'
+import siitCourseEnrollment1 from '../assets/projects/siit/course-enrollment-1.webp'
+import siitLibraryBooking1 from '../assets/projects/siit/library-booking-1.webp'
+import siitLibraryBooking2 from '../assets/projects/siit/library-booking-2.webp'
+import siitLearningResources1 from '../assets/projects/siit/learning-resources-1.webp'
+import siitLearningResources2 from '../assets/projects/siit/learning-resources-2.webp'
+import siitTypography from '../assets/projects/siit/typography.webp'
+import siitUi1 from '../assets/projects/siit/ui-1.webp'
+import siitUi2 from '../assets/projects/siit/ui-2.webp'
+import siitUi3 from '../assets/projects/siit/ui-3.webp'
+import siitIllustrations1 from '../assets/projects/siit/illustrations-1.webp'
+import siitIllustrations2 from '../assets/projects/siit/illustrations-2.webp'
 
-import friendsHero from '../assets/projects/friends-and-funds-hero.webp'
-import friendsGroupScheduling from '../assets/projects/friends-group-scheduling.webp'
-import friendsItemSplitting from '../assets/projects/friends-item-splitting.webp'
+// --- Friends & Funds ---
+import friendsHero from '../assets/projects/friends/hero.webp'
+import friendsGroupScheduling1 from '../assets/projects/friends/group-scheduling-1.webp'
+import friendsGroupScheduling2 from '../assets/projects/friends/group-scheduling-2.webp'
+import friendsFlexibleBillSplitting1 from '../assets/projects/friends/flexible-bill-splitting-1.webp'
+import friendsFlexibleBillSplitting2 from '../assets/projects/friends/flexible-bill-splitting-2.webp'
+import friendsItemBasedSplitting1 from '../assets/projects/friends/item-based-splitting-1.webp'
+import friendsItemBasedSplitting2 from '../assets/projects/friends/item-based-splitting-2.webp'
+import friendsGroupBalance1 from '../assets/projects/friends/group-balance-1.webp'
+import friendsGroupBalance2 from '../assets/projects/friends/group-balance-2.webp'
+import friendsTypography from '../assets/projects/friends/typography.webp'
+import friendsUi1 from '../assets/projects/friends/ui-1.webp'
+import friendsUi2 from '../assets/projects/friends/ui-2.webp'
+import friendsUi3 from '../assets/projects/friends/ui-3.webp'
+import friendsIllustrations1 from '../assets/projects/friends/illustrations-1.webp'
+import friendsIllustrations2 from '../assets/projects/friends/illustrations-2.webp'
 
-import actTrackHero from '../assets/projects/acttrack-hero.webp'
-import actTrackActivityTracking from '../assets/projects/acttrack-activity-tracking.webp'
-import actTrackGoalSetting from '../assets/projects/acttrack-goal-setting.webp'
-import actTrackActivityInsights from '../assets/projects/acttrack-activity-insights.webp'
-import actTrackSocialMotivation from '../assets/projects/acttrack-social-motivation.webp'
+// --- ActTrack ---
+import actTrackHero from '../assets/projects/acttrack/hero.webp'
+import actTrackActivityTracking1 from '../assets/projects/acttrack/activity-tracking-1.webp'
+import actTrackGoalSetting1 from '../assets/projects/acttrack/goal-setting-1.webp'
+import actTrackGoalSetting2 from '../assets/projects/acttrack/goal-setting-2.webp'
+import actTrackActivityInsights1 from '../assets/projects/acttrack/activity-insights-1.webp'
+import actTrackSocialMotivation1 from '../assets/projects/acttrack/social-motivation-1.webp'
+import actTrackSocialMotivation2 from '../assets/projects/acttrack/social-motivation-2.webp'
+import actTrackTypography from '../assets/projects/acttrack/typography.webp'
+import actTrackUi1 from '../assets/projects/acttrack/ui-1.webp'
+import actTrackUi2 from '../assets/projects/acttrack/ui-2.webp'
+import actTrackUi3 from '../assets/projects/acttrack/ui-3.webp'
+import actTrackIcons1 from '../assets/projects/acttrack/icons-1.webp'
+import actTrackIcons2 from '../assets/projects/acttrack/icons-2.webp'
+import actTrackIcons3 from '../assets/projects/acttrack/icons-3.webp'
+import actTrackIcons4 from '../assets/projects/acttrack/icons-4.webp'
 
-import managingHero from '../assets/projects/managing-hero.webp'
-import managingCustomInventory from '../assets/projects/managing-custom-inventory.webp'
-import managingInventoryManagement from '../assets/projects/managing-inventory-management.webp'
-import managingTeamCollaboration from '../assets/projects/managing-team-collaboration.webp'
-import managingSupportCommunication from '../assets/projects/managing-support-communication.webp'
+// --- ManagINg ---
+import managingHero from '../assets/projects/managing/hero.webp'
+import managingCustomInventorySetup1 from '../assets/projects/managing/custom-inventory-setup-1.webp'
+import managingInventoryManagement1 from '../assets/projects/managing/inventory-management-1.webp'
+import managingTeamCollaboration1 from '../assets/projects/managing/team-collaboration-1.webp'
+import managingSupportCommunication1 from '../assets/projects/managing/support-communication-1.webp'
+import managingTypography from '../assets/projects/managing/typography.webp'
+import managingUi1 from '../assets/projects/managing/ui-1.webp'
+import managingUi2 from '../assets/projects/managing/ui-2.webp'
+import managingUi3 from '../assets/projects/managing/ui-3.webp'
+import managingUi4 from '../assets/projects/managing/ui-4.webp'
+import managingIcons1 from '../assets/projects/managing/icons-1.webp'
+import managingIcons2 from '../assets/projects/managing/icons-2.webp'
+import managingIcons3 from '../assets/projects/managing/icons-3.webp'
 
+// Filter tabs on the home + all-projects pages. Only categories in `availableCategories`
+// have real projects today; the rest render a "Coming soon" state when selected.
 export const projectCategories = ['UX Research', 'Product Design', 'Academic Research']
-// No Academic Research project yet — the category stays in the filter tabs (showing 0) until one is added.
+export const availableCategories = ['Product Design']
 
 export const projects = [
   {
-    id: 1,
-    category: 'UX Research',
-    title: 'Retail Banking UX Research',
-    subtitle: 'UX Research Intern, ttb',
-    description:
-      'Conducted end-to-end research across 12 projects in 6 product areas — customer service, retail lending, investment, wealth management, protection, and corporate banking — from problem framing through synthesis. Specifics are confidential and have been generalized to protect internal business information.',
-    image: null,
-    link: '#',
-  },
-  {
-    id: 2,
+    slug: 'siit-super-app',
     category: 'Product Design',
     title: 'SIIT Super App',
+    titleAccent: 'Super App',
     subtitle: 'All-in-One Campus App',
-    description: 'Bringing academic services, learning resources, and campus life together in one app.',
+    description:
+      'Bringing academic services, learning resources, and campus life together in one app.',
     image: siitHero,
     link: '/work/siit-super-app',
+    layout: 'mobile',
+    footerBubble: 'Everything students need, in one place!',
     detail: {
-      slug: 'siit-super-app',
       hero: siitHero,
       role: 'UX/UI Designer',
       course: 'Human Interface Design',
@@ -59,36 +105,62 @@ export const projects = [
         {
           title: 'Academic Planning',
           description: 'View class and exam schedules, exam scores, and grades in one place.',
-          image: siitAcademicPlanning,
+          image: siitAcademicPlanning1,
+          images: [siitAcademicPlanning1, siitAcademicPlanning2],
         },
         {
           title: 'Course Enrollment',
           description: 'Enroll, withdraw, and manage course selections directly from the app.',
-          image: siitCourseEnrollment,
+          image: siitCourseEnrollment1,
+          images: [siitCourseEnrollment1],
         },
         {
           title: 'Library Booking',
           description: 'Check room availability and reserve study spaces across campuses.',
-          image: siitLibraryBooking,
+          image: siitLibraryBooking1,
+          images: [siitLibraryBooking1, siitLibraryBooking2],
         },
         {
           title: 'Learning Resources',
           description: 'Access course materials and revisit recorded lectures anytime.',
-          image: siitLearningResources,
+          image: siitLearningResources1,
+          images: [siitLearningResources1, siitLearningResources2],
         },
       ],
+      designSystem: {
+        color: {
+          blurb: 'Purple-led palette with soft neutrals and ocean-inspired accents.',
+          swatches: ['#7100B7', '#E4B8FF', '#005576', '#FFFAF7'],
+        },
+        typography: {
+          blurb: 'Friendly handwritten typography with a playful campus feel.',
+          font: 'tinymoji',
+          image: siitTypography,
+        },
+        uiElements: {
+          blurb: 'Rounded components and clear navigation keep key actions easy to reach.',
+          images: [siitUi1, siitUi2, siitUi3],
+        },
+        gallery: {
+          label: 'Illustrations',
+          blurb: 'Orca mascot and ocean visuals create a playful campus identity.',
+          images: [siitIllustrations1, siitIllustrations2],
+        },
+      },
     },
   },
   {
-    id: 3,
+    slug: 'friends-and-funds',
     category: 'Product Design',
     title: 'Friends & Funds',
+    titleAccent: null,
     subtitle: 'Group Planning & Expense App',
     description: 'Plan activities, find shared free time, and split expenses with friends.',
     image: friendsHero,
     link: '/work/friends-and-funds',
+    layout: 'mobile',
+    footerBubble: 'Plan together. Split smarter.',
     detail: {
-      slug: 'friends-and-funds',
       hero: friendsHero,
       role: 'UX/UI Designer',
       course: 'System Analysis and Design',
@@ -100,26 +172,62 @@ export const projects = [
         {
           title: 'Group Scheduling',
           description: 'Compare group availability and use polls to find the best time to meet.',
-          image: friendsGroupScheduling,
+          image: friendsGroupScheduling1,
+          images: [friendsGroupScheduling1, friendsGroupScheduling2],
+        },
+        {
+          title: 'Flexible Bill Splitting',
+          description: 'Split expenses equally, by amount, ratio, or randomly.',
+          image: friendsFlexibleBillSplitting1,
+          images: [friendsFlexibleBillSplitting1, friendsFlexibleBillSplitting2],
         },
         {
           title: 'Item-Based Splitting',
           description: 'Turn receipts into individual items and let friends choose what they pay for.',
-          image: friendsItemSplitting,
+          image: friendsItemBasedSplitting1,
+          images: [friendsItemBasedSplitting1, friendsItemBasedSplitting2],
+        },
+        {
+          title: 'Group Balance & Settlement',
+          description: 'Track who owes whom, view payment details, and settle balances easily.',
+          image: friendsGroupBalance1,
+          images: [friendsGroupBalance1, friendsGroupBalance2],
         },
       ],
+      designSystem: {
+        color: {
+          blurb: 'Purple palette with soft lavender and clear status colors.',
+          swatches: ['#7047BA', '#9C63FD', '#FAF3FF', '#00AB49'],
+        },
+        typography: {
+          blurb: 'Rounded typography creates a friendly and approachable feel.',
+          font: 'Outfit',
+          image: friendsTypography,
+        },
+        uiElements: {
+          blurb: 'Rounded cards and clear navigation simplify group actions.',
+          images: [friendsUi1, friendsUi2, friendsUi3],
+        },
+        gallery: {
+          label: 'Illustrations',
+          blurb: 'Playful visuals make expense sharing feel more approachable.',
+          images: [friendsIllustrations1, friendsIllustrations2],
+        },
+      },
     },
   },
   {
-    id: 4,
+    slug: 'acttrack',
     category: 'Product Design',
     title: 'ActTrack',
+    titleAccent: null,
     subtitle: 'Fitness Tracking & Goal App',
     description: 'Track daily activities, set personal goals, and stay motivated with friends.',
     image: actTrackHero,
     link: '/work/acttrack',
+    layout: 'mobile',
+    footerBubble: 'Track progress. Reach your goals!',
     detail: {
-      slug: 'acttrack',
       hero: actTrackHero,
       role: 'UX/UI Designer',
       course: 'Cloud-Based Application',
@@ -131,36 +239,63 @@ export const projects = [
         {
           title: 'Activity Tracking',
           description: 'Track walking, standing, cycling, and stair climbing throughout the day.',
-          image: actTrackActivityTracking,
+          image: actTrackActivityTracking1,
+          images: [actTrackActivityTracking1],
         },
         {
           title: 'Goal Setting',
           description: 'Create one-time or recurring goals and track progress.',
-          image: actTrackGoalSetting,
+          image: actTrackGoalSetting1,
+          images: [actTrackGoalSetting1, actTrackGoalSetting2],
         },
         {
           title: 'Activity Insights',
           description: 'View daily, weekly, and monthly activity summaries in one place.',
-          image: actTrackActivityInsights,
+          image: actTrackActivityInsights1,
+          images: [actTrackActivityInsights1],
         },
         {
           title: 'Social Motivation',
           description: 'Connect with friends and compare progress through activity leaderboards.',
-          image: actTrackSocialMotivation,
+          image: actTrackSocialMotivation1,
+          images: [actTrackSocialMotivation1, actTrackSocialMotivation2],
         },
       ],
+      designSystem: {
+        color: {
+          blurb:
+            'Fresh teal palette with soft neutrals for an energetic and clean fitness experience.',
+          swatches: ['#00E4CF', '#ECEBF2', '#FFFFFF'],
+        },
+        typography: {
+          blurb: 'Clean sans-serif keeps activity data clear and easy to scan.',
+          font: 'Inter',
+          image: actTrackTypography,
+        },
+        uiElements: {
+          blurb: 'Rounded cards, progress bars, tabs, and clear actions simplify fitness tracking.',
+          images: [actTrackUi1, actTrackUi2, actTrackUi3],
+        },
+        gallery: {
+          label: 'Icons',
+          blurb: 'Simple activity icons help users quickly recognize different fitness categories.',
+          images: [actTrackIcons1, actTrackIcons2, actTrackIcons3, actTrackIcons4],
+        },
+      },
     },
   },
   {
-    id: 5,
+    slug: 'managing',
     category: 'Product Design',
-    title: 'ManagIng',
+    title: 'ManagINg',
+    titleAccent: null,
     subtitle: 'Inventory Management',
     description: 'Create flexible inventories, manage stock, and collaborate with your team.',
     image: managingHero,
     link: '/work/managing',
+    layout: 'web',
+    footerBubble: 'Manage better. Work together!',
     detail: {
-      slug: 'managing',
       hero: managingHero,
       role: 'UX/UI Designer, Frontend Developer',
       course: 'Database Lab',
@@ -171,25 +306,51 @@ export const projects = [
       keyFeatures: [
         {
           title: 'Custom Inventory Setup',
-          description: 'Create inventories and customize the information needed for different types of products.',
-          image: managingCustomInventory,
+          description:
+            'Create inventories and customize the information needed for different types of products.',
+          image: managingCustomInventorySetup1,
+          images: [managingCustomInventorySetup1],
         },
         {
           title: 'Inventory Management',
-          description: 'Add, edit, search, and manage product details and stock quantities in one place.',
-          image: managingInventoryManagement,
+          description:
+            'Add, edit, search, and manage product details and stock quantities in one place.',
+          image: managingInventoryManagement1,
+          images: [managingInventoryManagement1],
         },
         {
           title: 'Team Collaboration',
           description: 'Share inventories with team members and collaborate through invitations.',
-          image: managingTeamCollaboration,
+          image: managingTeamCollaboration1,
+          images: [managingTeamCollaboration1],
         },
         {
           title: 'Support & Communication',
           description: 'Receive updates and contact administrators for inventory support.',
-          image: managingSupportCommunication,
+          image: managingSupportCommunication1,
+          images: [managingSupportCommunication1],
         },
       ],
+      designSystem: {
+        color: {
+          blurb: 'Deep red accents with neutral tones create a focused interface.',
+          swatches: ['#B90009', '#F05D63', '#01E28E', '#FFFFFF'],
+        },
+        typography: {
+          blurb: 'Inria Serif gives the interface a structured, professional feel.',
+          font: 'Inria Serif',
+          image: managingTypography,
+        },
+        uiElements: {
+          blurb: 'Structured tables and clear controls simplify inventory tasks.',
+          images: [managingUi1, managingUi2, managingUi3, managingUi4],
+        },
+        gallery: {
+          label: 'Icons',
+          blurb: 'Simple action icons make inventory and communication tasks easy to recognize.',
+          images: [managingIcons1, managingIcons2, managingIcons3],
+        },
+      },
     },
   },
 ]

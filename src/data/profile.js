@@ -22,14 +22,13 @@ export const profile = {
 
   photo: profilePhoto,
 
-  // TODO: put your resume PDF in /public (e.g. public/resume.pdf) and update this path
-  resumeUrl: '/resume.pdf',
+  // Résumé lives at public/resume.pdf; BASE_URL keeps the link correct under /portfolio/.
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 
-  // TODO: replace with your real profile URLs
   links: {
-    linkedin: 'https://linkedin.com/in/TODO',
-    github: 'https://github.com/TODO',
-    email: 'mailto:TODO@example.com',
+    linkedin: 'https://www.linkedin.com/in/chanyanud-sriyota-b1ab65282/',
+    github: 'https://github.com/oumchanyanud',
+    email: 'mailto:chanyanud.sri@gmail.com',
   },
 
   // Variant controls color: "purple" | "green" | "white"

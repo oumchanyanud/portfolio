@@ -4,7 +4,7 @@ import { ArrowRightIcon, BriefcaseIcon, CameraIcon, CodeIcon } from './icons'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const project = projects.find((p) => p.detail?.slug === slug)
+  const project = projects.find((p) => p.slug === slug)
 
   if (!project) return <Navigate to="/" replace />
 
