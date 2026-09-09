@@ -39,7 +39,7 @@ export default function Contact({ bubbleText, className = '' }) {
             className="w-[96px] shrink-0 object-contain sm:w-[120px] lg:w-[137px]"
             style={{ aspectRatio: '137 / 133' }}
           />
-          <div className="relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none lg:w-[19rem]">
+          <div className="relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none lg:w-[21rem]">
             <img
               src={textBubble}
               alt=""

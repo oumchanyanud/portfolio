@@ -47,7 +47,9 @@ export default function ProjectDetail() {
     { icon: toolsIcon, w: 34.5, h: 34.5, label: t('projectDetail.tools'), value: detail.tools },
   ]
 
-  const Blob = <img src={blob} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full" />
+  const Blob = (
+    <img src={blob} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full opacity-70" />
+  )
 
   return (
     <>
@@ -260,12 +262,12 @@ function FeatureCard({ feature, isWeb }) {
   }
 
   return (
-    <div className={`flex flex-col gap-6 ${CARD} p-6 sm:p-9 lg:flex-row`}>
+    <div className={`flex flex-col gap-6 ${CARD} p-6 sm:p-9 lg:flex-row lg:items-start`}>
       <div className="min-w-0 flex-1">
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
         <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
       </div>
-      <div className="flex shrink-0 justify-center gap-4 lg:-my-3 lg:-mr-3 lg:items-center lg:gap-6">
+      <div className="flex shrink-0 justify-center gap-4 lg:-mr-3 lg:-mt-3 lg:gap-6">
         {images.map((src) => (
           <img
             key={src}
