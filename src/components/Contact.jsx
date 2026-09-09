@@ -49,7 +49,7 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
           />
           <div
             className={`relative flex min-w-0 flex-1 items-center justify-center self-center sm:flex-none ${
-              isProject ? 'sm:w-[17rem] lg:w-[22rem]' : 'sm:w-[17rem] lg:w-[23rem]'
+              isProject ? 'sm:w-[18rem] lg:w-[27rem]' : 'sm:w-[17rem] lg:w-[23rem]'
             }`}
           >
             <img
@@ -59,7 +59,7 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
               className="pointer-events-none absolute inset-0 h-full w-full"
             />
             {isProject ? (
-              <p className="relative px-6 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-7 sm:text-[24px]">
+              <p className="relative whitespace-nowrap px-5 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-6 sm:text-[24px]">
                 {lines.map((line, i) => (
                   <span key={line}>
                     {i > 0 && <br />}
