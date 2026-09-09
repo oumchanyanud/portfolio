@@ -138,7 +138,8 @@ export default function ProjectDetail() {
         {ds && (
           <section className="mt-9">
             <SectionHeading>{t('projectDetail.designSystem')}</SectionHeading>
-            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+            {/* lg: fixed Figma widths 244 / 244 / 324 / 244, 375 tall, 48 gap */}
+            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-[244px_244px_324px_244px] lg:justify-center lg:gap-12">
               <DsCard title={t('projectDetail.color')} blurb={ds.color.blurb}>
                 <ul className="mt-6 space-y-3">
                   {ds.color.swatches.map((hex) => (
@@ -165,23 +166,29 @@ export default function ProjectDetail() {
               </DsCard>
 
               <DsCard title={t('projectDetail.uiElements')} blurb={ds.uiElements.blurb}>
-                <div className="mt-6 space-y-2">
-                  {ds.uiElements.images.map((src, i) => (
-                    <img
-                      key={src}
-                      src={src}
-                      alt={`${project.title} UI element ${i + 1}`}
-                      className="w-full max-w-[252px] rounded-lg"
-                    />
-                  ))}
+                <div className="mt-6 flex flex-col">
+                  {ds.uiElements.images.map((entry, i) => {
+                    const src = typeof entry === 'string' ? entry : entry.src
+                    const gap = ds.uiElements.gap
+                    const mt = i === 0 ? 0 : Array.isArray(gap) ? (gap[i - 1] ?? 8) : (gap ?? 8)
+                    const dims =
+                      typeof entry === 'object'
+                        ? { width: entry.w, height: entry.h }
+                        : { width: '100%', maxWidth: 252 }
+                    return (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={`${project.title} UI element ${i + 1}`}
+                        className="rounded-lg"
+                        style={{ marginTop: mt, ...dims }}
+                      />
+                    )
+                  })}
                 </div>
               </DsCard>
 
-              <DsCard
-                title={ds.gallery.label}
-                blurb={ds.gallery.blurb}
-                clip={ds.gallery.kind === 'illustration'}
-              >
+              <DsCard title={ds.gallery.label} blurb={ds.gallery.blurb}>
                 {ds.gallery.kind === 'icon' ? (
                   <div className="mt-6 flex flex-wrap gap-3">
                     {ds.gallery.images.map((img, i) => (
@@ -195,14 +202,17 @@ export default function ProjectDetail() {
                     ))}
                   </div>
                 ) : (
-                  <div className="mt-6 flex flex-col items-center gap-3">
+                  <div
+                    className="mt-6 flex flex-col items-center"
+                    style={{ gap: ds.gallery.gap ?? 12 }}
+                  >
                     {ds.gallery.images.map((img, i) =>
                       img.bleed ? (
                         <img
                           key={img.src}
                           src={img.src}
                           alt={`${project.title} ${ds.gallery.label} ${i + 1}`}
-                          className="-mx-6 -mb-6 mt-2 w-[calc(100%+3rem)] rounded-b-[24px] object-cover sm:-mx-9 sm:-mb-9 sm:w-[calc(100%+4.5rem)]"
+                          className="-mx-6 -mb-6 w-[calc(100%+3rem)] rounded-b-[24px] object-cover sm:-mx-9 sm:-mb-9 sm:w-[calc(100%+4.5rem)]"
                           style={{ height: img.h }}
                         />
                       ) : (
@@ -262,18 +272,23 @@ function FeatureCard({ feature, isWeb }) {
   }
 
   // Desktop: screenshots sit against the bottom edge of the card (bottom inset 0),
-  // 24 from the top and 24 from the right; the card holds their 252px height.
+  // 24 from the top; single screen is inset 78 from the right, a pair is inset 24
+  // with an 8px gap between them.
   return (
     <div
       className={`${CARD} relative flex flex-col gap-6 overflow-hidden p-6 sm:p-9 lg:block lg:min-h-[276px] lg:gap-0 ${
-        single ? 'lg:pr-[204px]' : 'lg:pr-[328px]'
+        single ? 'lg:pr-[302px]' : 'lg:pr-[356px]'
       }`}
     >
       <div className="min-w-0">
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
         <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
       </div>
-      <div className="flex justify-center gap-4 lg:absolute lg:bottom-0 lg:right-6 lg:top-6 lg:items-end lg:justify-end lg:gap-6">
+      <div
+        className={`flex justify-center gap-2 lg:absolute lg:bottom-0 lg:top-6 lg:items-end lg:justify-end lg:gap-2 ${
+          single ? 'lg:right-[78px]' : 'lg:right-6'
+        }`}
+      >
         {images.map((src) => (
           <img
             key={src}
@@ -282,7 +297,7 @@ function FeatureCard({ feature, isWeb }) {
             className={
               single
                 ? 'aspect-[200/252] w-[200px] max-w-full rounded-t-[27px] rounded-b-none object-cover lg:aspect-auto lg:h-[252px]'
-                : 'aspect-[150/252] w-[150px] max-w-[calc(50%-8px)] shrink rounded-t-[27px] rounded-b-none object-cover lg:aspect-auto lg:h-[252px] lg:max-w-none lg:shrink-0'
+                : 'aspect-[150/252] w-[150px] max-w-[calc(50%-4px)] shrink rounded-t-[27px] rounded-b-none object-cover lg:aspect-auto lg:h-[252px] lg:max-w-none lg:shrink-0'
             }
           />
         ))}
@@ -291,10 +306,10 @@ function FeatureCard({ feature, isWeb }) {
   )
 }
 
-// Card padding 36; title → blurb 16; blurb → content 24.
-function DsCard({ title, blurb, children, clip }) {
+// Card padding 36; title → blurb 16; blurb → content 24; fixed 375px tall on lg.
+function DsCard({ title, blurb, children }) {
   return (
-    <div className={`${CARD} p-6 sm:p-9 ${clip ? 'overflow-hidden' : ''}`}>
+    <div className={`${CARD} overflow-hidden p-6 sm:p-9 lg:h-[375px]`}>
       <h3 className="text-[20px] font-semibold text-black">{title}</h3>
       <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{blurb}</p>
       {children}

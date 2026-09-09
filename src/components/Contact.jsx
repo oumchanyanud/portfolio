@@ -5,9 +5,8 @@ import footerBg from '../assets/footer-bg.svg'
 import characters from '../assets/characters.webp'
 import textBubble from '../assets/text-bubble.webp'
 
-// `variant` sizes the band: the home banner is more compact than the project one
-// (Figma: project band ≈ 142px tall, 137×133 character; home band is shorter).
-// `bubbleText` lets project pages show their own line.
+// Figma banner sizes: home 1296×142, project 1200×142 (same height, different width
+// via the section's horizontal padding). `bubbleText` overrides the shared line.
 export default function Contact({ bubbleText, className = '', variant = 'home' }) {
   const { t } = useTranslation()
   const text = bubbleText || t('contact.bubble')
@@ -22,13 +21,11 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
   return (
     <section
       id="contact"
-      className={`mx-auto max-w-[1440px] px-6 pb-12 sm:px-10 lg:px-[72px] ${className}`}
+      className={`mx-auto max-w-[1440px] px-6 pb-12 sm:px-10 ${
+        isProject ? 'lg:px-[120px]' : 'lg:px-[72px]'
+      } ${className}`}
     >
-      <div
-        className={`relative flex flex-col items-center gap-5 overflow-hidden rounded-[24px] px-6 py-6 sm:px-8 lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:py-2 lg:pl-[96px] lg:pr-[84px] ${
-          isProject ? 'lg:min-h-[142px]' : 'lg:min-h-[116px]'
-        }`}
-      >
+      <div className="relative flex flex-col items-center gap-5 overflow-hidden rounded-[24px] px-6 py-6 sm:px-8 lg:h-[142px] lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:py-0 lg:pl-[96px] lg:pr-[84px]">
         {/* Direct Figma export (rounded container + two-tone wavy bands) — pixel-exact artwork. */}
         <img
           src={footerBg}
@@ -37,21 +34,16 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
           className="pointer-events-none absolute inset-0 h-full w-full"
         />
 
-        <div className="relative flex w-full items-center gap-3 sm:w-auto sm:gap-4 lg:gap-9">
+        <div className="relative flex w-full items-center gap-3 sm:w-auto sm:gap-4 lg:h-full lg:gap-9">
+          {/* bottom edge of the character sits flush with the bottom of the banner */}
           <img
             src={characters}
             alt=""
             aria-hidden="true"
-            className={`w-[92px] shrink-0 object-contain sm:w-[116px] ${
-              isProject ? 'lg:w-[137px]' : 'lg:w-[112px]'
-            }`}
+            className="w-[92px] shrink-0 self-end object-contain sm:w-[116px] lg:w-[137px]"
             style={{ aspectRatio: '137 / 133' }}
           />
-          <div
-            className={`relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none ${
-              isProject ? 'lg:w-[21rem]' : 'lg:w-[22rem]'
-            }`}
-          >
+          <div className="relative flex min-w-0 flex-1 items-center justify-center self-center sm:w-[16rem] sm:flex-none lg:w-[21rem]">
             <img
               src={textBubble}
               alt=""

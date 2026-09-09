@@ -143,6 +143,7 @@ export const projects = [
         },
         uiElements: {
           blurb: 'Rounded components and clear navigation keep key actions easy to reach.',
+          gap: 22,
           images: [siitUi1, siitUi2, siitUi3],
         },
         gallery: {
@@ -214,12 +215,14 @@ export const projects = [
         },
         uiElements: {
           blurb: 'Rounded cards and clear navigation simplify group actions.',
+          gap: 15,
           images: [friendsUi1, friendsUi2, friendsUi3],
         },
         gallery: {
           label: 'Illustrations',
           kind: 'illustration',
           blurb: 'Playful visuals make expense sharing feel more approachable.',
+          gap: 19,
           images: [
             { src: friendsIllustrations1, w: 172.7, h: 129.82 },
             { src: friendsIllustrations2, w: 172.7, h: 129.82 },
@@ -286,6 +289,7 @@ export const projects = [
         },
         uiElements: {
           blurb: 'Rounded cards, progress bars, tabs, and clear actions simplify fitness tracking.',
+          gap: 11,
           images: [actTrackUi1, actTrackUi2, actTrackUi3],
         },
         gallery: {
@@ -361,7 +365,13 @@ export const projects = [
         },
         uiElements: {
           blurb: 'Structured tables and clear controls simplify inventory tasks.',
-          images: [managingUi1, managingUi2, managingUi3, managingUi4],
+          gap: [16, 16, 2],
+          images: [
+            { src: managingUi1, w: 252, h: 37 },
+            { src: managingUi2, w: 252, h: 29 },
+            { src: managingUi3, w: 116, h: 29 },
+            { src: managingUi4, w: 194, h: 54 },
+          ],
         },
         gallery: {
           label: 'Icons',
