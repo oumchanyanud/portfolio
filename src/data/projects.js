@@ -11,6 +11,7 @@
 //                   uiElements:{blurb,images[]}, gallery:{label:'Illustrations'|'Icons',blurb,images[]} }
 
 // --- SIIT Super App ---
+import siitCard from '../assets/projects/siit/card.webp'
 import siitHero from '../assets/projects/siit/hero.webp'
 import siitAcademicPlanning1 from '../assets/projects/siit/academic-planning-1.webp'
 import siitAcademicPlanning2 from '../assets/projects/siit/academic-planning-2.webp'
@@ -27,6 +28,7 @@ import siitIllustrations1 from '../assets/projects/siit/illustrations-1.webp'
 import siitIllustrations2 from '../assets/projects/siit/illustrations-2.webp'
 
 // --- Friends & Funds ---
+import friendsCard from '../assets/projects/friends/card.webp'
 import friendsHero from '../assets/projects/friends/hero.webp'
 import friendsGroupScheduling1 from '../assets/projects/friends/group-scheduling-1.webp'
 import friendsGroupScheduling2 from '../assets/projects/friends/group-scheduling-2.webp'
@@ -44,6 +46,7 @@ import friendsIllustrations1 from '../assets/projects/friends/illustrations-1.we
 import friendsIllustrations2 from '../assets/projects/friends/illustrations-2.webp'
 
 // --- ActTrack ---
+import actTrackCard from '../assets/projects/acttrack/card.webp'
 import actTrackHero from '../assets/projects/acttrack/hero.webp'
 import actTrackActivityTracking1 from '../assets/projects/acttrack/activity-tracking-1.webp'
 import actTrackGoalSetting1 from '../assets/projects/acttrack/goal-setting-1.webp'
@@ -61,6 +64,7 @@ import actTrackIcons3 from '../assets/projects/acttrack/icons-3.webp'
 import actTrackIcons4 from '../assets/projects/acttrack/icons-4.webp'
 
 // --- ManagINg ---
+import managingCard from '../assets/projects/managing/card.webp'
 import managingHero from '../assets/projects/managing/hero.webp'
 import managingCustomInventorySetup1 from '../assets/projects/managing/custom-inventory-setup-1.webp'
 import managingInventoryManagement1 from '../assets/projects/managing/inventory-management-1.webp'
@@ -89,7 +93,7 @@ export const projects = [
     subtitle: 'All-in-One Campus App',
     description:
       'Bringing academic services, learning resources, and campus life together in one app.',
-    image: siitHero,
+    image: siitCard,
     link: '/work/siit-super-app',
     layout: 'mobile',
     footerBubble: 'Everything students need, in one place!',
@@ -156,7 +160,7 @@ export const projects = [
     titleAccent: null,
     subtitle: 'Group Planning & Expense App',
     description: 'Plan activities, find shared free time, and split expenses with friends.',
-    image: friendsHero,
+    image: friendsCard,
     link: '/work/friends-and-funds',
     layout: 'mobile',
     footerBubble: 'Plan together. Split smarter.',
@@ -223,7 +227,7 @@ export const projects = [
     titleAccent: null,
     subtitle: 'Fitness Tracking & Goal App',
     description: 'Track daily activities, set personal goals, and stay motivated with friends.',
-    image: actTrackHero,
+    image: actTrackCard,
     link: '/work/acttrack',
     layout: 'mobile',
     footerBubble: 'Track progress. Reach your goals!',
@@ -291,7 +295,7 @@ export const projects = [
     titleAccent: null,
     subtitle: 'Inventory Management',
     description: 'Create flexible inventories, manage stock, and collaborate with your team.',
-    image: managingHero,
+    image: managingCard,
     link: '/work/managing',
     layout: 'web',
     footerBubble: 'Manage better. Work together!',

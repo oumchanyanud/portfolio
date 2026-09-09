@@ -74,11 +74,15 @@ export default function Work() {
                 {...cardProps}
                 className="group flex flex-col overflow-hidden rounded-[20px] border-2 border-[#d9d6e4] bg-[#fdfdfd] transition-shadow hover:shadow-lg"
               >
-                <div className="flex aspect-video items-center justify-center bg-gray-50 text-sm text-gray-400">
+                <div className="flex aspect-[760/338] items-center justify-center bg-primary-light/40 text-sm text-gray-400">
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
                   ) : (
-                    // TODO: add a project thumbnail — see src/data/projects.js `image`
                     'Project image'
                   )}
                 </div>
