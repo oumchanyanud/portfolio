@@ -25,38 +25,49 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
         isProject ? 'lg:px-[120px]' : 'lg:px-[72px]'
       } ${className}`}
     >
-      <div className="relative flex flex-col items-center gap-5 overflow-hidden rounded-[24px] px-6 py-6 sm:px-8 lg:h-[142px] lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:py-0 lg:pl-[96px] lg:pr-[84px]">
+      <div className="relative flex flex-col items-center gap-5 rounded-[24px] px-6 py-6 sm:px-8 lg:h-[142px] lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:py-0 lg:pl-[96px] lg:pr-[84px]">
         {/* Direct Figma export (rounded container + two-tone wavy bands) — pixel-exact artwork. */}
         <img
           src={footerBg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full"
+          className="pointer-events-none absolute inset-0 h-full w-full rounded-[24px]"
         />
 
-        <div className="relative flex w-full items-center gap-3 sm:w-auto sm:gap-4 lg:h-full lg:gap-9">
-          {/* bottom edge of the character sits flush with the bottom of the banner */}
+        <div className="relative flex w-full items-end gap-3 sm:w-auto sm:gap-4 lg:h-full lg:gap-9">
+          {/* bottom edge of the character is flush with the bottom of the banner; on the
+              home banner it is a little taller and rises above the band */}
           <img
             src={characters}
             alt=""
             aria-hidden="true"
-            className="w-[92px] shrink-0 self-end object-contain sm:w-[116px] lg:w-[137px]"
+            className={`shrink-0 self-end object-contain ${
+              isProject ? 'w-[100px] sm:w-[120px] lg:w-[137px]' : 'w-[104px] sm:w-[132px] lg:w-[164px]'
+            }`}
             style={{ aspectRatio: '137 / 133' }}
           />
-          <div className="relative flex min-w-0 flex-1 items-center justify-center self-center sm:w-[16rem] sm:flex-none lg:w-[21rem]">
+          <div
+            className={`relative flex min-w-0 flex-1 items-center justify-center self-center sm:flex-none ${
+              isProject ? 'sm:w-[16rem] lg:w-[21rem]' : 'sm:w-[17rem] lg:w-[23rem]'
+            }`}
+          >
             <img
               src={textBubble}
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 h-full w-full"
             />
-            <p
-              className={`relative px-6 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-7 ${
-                isProject ? 'sm:text-[24px]' : 'sm:text-[22px]'
-              }`}
-            >
-              {text}
-            </p>
+            {isProject ? (
+              <p className="relative px-6 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-7 sm:text-[24px]">
+                {text}
+              </p>
+            ) : (
+              <p className="relative px-6 py-3 text-center font-playful font-semibold leading-tight text-primary sm:px-7">
+                <span className="text-[20px] sm:text-[26px]">{t('contact.bubbleLead')}</span>
+                <br />
+                <span className="text-[15px] sm:text-[19px]">{t('contact.bubbleRest')}</span>
+              </p>
+            )}
           </div>
         </div>
 

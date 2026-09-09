@@ -142,13 +142,11 @@ function ProjectCard({ project }) {
         )}
       </div>
       <div className="flex flex-1 flex-col border-t border-[#d9d6e4] p-5">
-        <span className={`text-[13px] font-semibold uppercase ${style.text}`}>{project.category}</span>
-        <h3 className="mt-2 font-playful text-xl font-bold leading-[28px] text-[#333333]">
-          {project.title}
-        </h3>
-        <p className="font-playful text-xl font-bold leading-[28px] text-[#333333]">
-          {project.subtitle}
-        </p>
+        <span className={`text-[13px] font-semibold uppercase tracking-wide ${style.text}`}>
+          {project.category}
+        </span>
+        <h3 className="mt-2 text-xl font-semibold leading-[28px] text-[#333333]">{project.title}</h3>
+        <p className="text-xl font-semibold leading-[28px] text-[#333333]">{project.subtitle}</p>
         <p className="mt-2 flex-1 text-sm text-gray-500">{project.description}</p>
         <span
           className={`mt-4 inline-flex h-9 w-9 items-center justify-center self-end rounded-full transition-transform group-hover:translate-x-1 ${style.button}`}
