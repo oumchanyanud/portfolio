@@ -22,10 +22,16 @@ export default function About() {
             {profile.about.facts.map((fact) => (
               <span
                 key={fact.label}
-                className="flex items-center gap-2 rounded-[20px] bg-primary-light px-6 py-2.5 text-base font-semibold text-[#37353d]"
+                style={{ width: fact.w, height: fact.h }}
+                className="flex items-center justify-center gap-2 rounded-[20px] bg-primary-light px-3 text-base font-semibold leading-tight text-[#37353d]"
               >
-                <Icon name={fact.icon} width={20} height={20} className="text-ux-research" />
-                {fact.label}
+                <Icon
+                  name={fact.icon}
+                  width={20}
+                  height={20}
+                  className="shrink-0 text-ux-research"
+                />
+                <span className={fact.twoLine ? '' : 'whitespace-nowrap'}>{fact.label}</span>
               </span>
             ))}
           </div>

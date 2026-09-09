@@ -6,6 +6,7 @@ import Experience from './components/Experience'
 import About from './components/About'
 import Contact from './components/Contact'
 import ProjectDetail from './components/ProjectDetail'
+import AllProjects from './components/AllProjects'
 
 function Home() {
   return (
@@ -16,7 +17,8 @@ function Home() {
         <Experience />
         <About />
       </main>
-      <Contact />
+      {/* last card → 48 → banner */}
+      <Contact className="mt-6" />
     </>
   )
 }
@@ -27,6 +29,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/work" element={<AllProjects />} />
         <Route path="/work/:slug" element={<ProjectDetail />} />
       </Routes>
     </div>

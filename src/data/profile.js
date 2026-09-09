@@ -46,10 +46,10 @@ export const profile = {
       'Computer Engineering graduate with a passion for understanding people and solving real problems.',
       'I enjoy turning complex user needs into simple, meaningful solutions through research, design and technology.',
     ],
-    // TODO: update location / graduation date
+    // width/height are the Figma pill sizes; `twoLine` wraps the label.
     facts: [
-      { icon: 'pin', label: 'Bangkok, Thailand' },
-      { icon: 'cap', label: 'Graduated May 2026' },
+      { icon: 'pin', label: 'Bangkok, Thailand', w: 137, h: 67, twoLine: true },
+      { icon: 'cap', label: 'Graduated May 2026', w: 229, h: 67 },
     ],
   },
 

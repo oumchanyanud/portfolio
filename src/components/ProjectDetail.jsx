@@ -53,7 +53,7 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <div className="mx-auto max-w-[1440px] px-6 pb-12 pt-32 sm:px-10 md:pt-40 lg:px-[120px]">
+      <div className="mx-auto max-w-[1440px] px-6 pb-0 pt-32 sm:px-10 md:pt-40 lg:px-[120px]">
         <Link
           to="/#work"
           className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-70"
@@ -138,7 +138,8 @@ export default function ProjectDetail() {
         {ds && (
           <section className="mt-9">
             <SectionHeading>{t('projectDetail.designSystem')}</SectionHeading>
-            {/* lg: fixed Figma widths 244 / 244 / 324 / 244, 375 tall, 48 gap */}
+            {/* lg: fixed Figma widths 244 / 244 / 324 / 244, 48 gap; height grows to the
+                tallest card so its last element clears the bottom edge by 36 (p-9). */}
             <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-[244px_244px_324px_244px] lg:justify-center lg:gap-12">
               <DsCard title={t('projectDetail.color')} blurb={ds.color.blurb}>
                 <ul className="mt-6 space-y-3">
@@ -306,10 +307,10 @@ function FeatureCard({ feature, isWeb }) {
   )
 }
 
-// Card padding 36; title → blurb 16; blurb → content 24; fixed 375px tall on lg.
+// Card padding 36 (so the last element clears the bottom edge by 36); title → blurb 16.
 function DsCard({ title, blurb, children }) {
   return (
-    <div className={`${CARD} overflow-hidden p-6 sm:p-9 lg:h-[375px]`}>
+    <div className={`${CARD} overflow-hidden p-6 sm:p-9`}>
       <h3 className="text-[20px] font-semibold text-black">{title}</h3>
       <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{blurb}</p>
       {children}

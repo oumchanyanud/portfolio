@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { projectCategories, projects, availableCategories } from '../data/projects'
 import { ArrowRightIcon, SparkleIcon } from './icons'
-
-const categoryStyles = {
-  'UX Research': { text: 'text-ux-research', button: 'bg-[#9477EF] text-white' },
-  'Product Design': { text: 'text-product-design', button: 'bg-[#83D3AE] text-white' },
-  'Academic Research': { text: 'text-academic-research', button: 'bg-[#8099FD] text-white' },
-}
+import ProjectCard from './ProjectCard'
 
 export default function Work() {
   const { t } = useTranslation()
@@ -67,13 +62,12 @@ export default function Work() {
                 </button>
               </div>
             )}
-            {/* All Projects page (/work) is a later change; anchor for now */}
-            <a
-              href="/#work"
+            <Link
+              to="/work"
               className="flex items-center gap-1 text-base font-medium text-black hover:text-primary hover:underline"
             >
               {t('work.viewAll')} <ArrowRightIcon width={16} height={16} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -110,50 +104,5 @@ export default function Work() {
         )}
       </div>
     </section>
-  )
-}
-
-// Three cards fit the viewport at md+ (100% minus the two 24px gaps, divided by 3).
-function ProjectCard({ project }) {
-  const style = categoryStyles[project.category] ?? {
-    text: 'text-gray-600',
-    button: 'bg-gray-100 text-gray-600',
-  }
-  const isInternal = project.link.startsWith('/')
-  const CardTag = isInternal ? Link : 'a'
-  const cardProps = isInternal ? { to: project.link } : { href: project.link }
-
-  return (
-    <CardTag
-      data-card
-      {...cardProps}
-      className="group flex w-[80%] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border-2 border-[#d9d6e4] bg-[#fdfdfd] transition-shadow hover:shadow-lg sm:w-[46%] md:w-[calc((100%-48px)/3)]"
-    >
-      <div className="flex aspect-[760/338] items-center justify-center bg-primary-light/40 text-sm text-gray-400">
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          'Project image'
-        )}
-      </div>
-      <div className="flex flex-1 flex-col border-t border-[#d9d6e4] p-5">
-        <span className={`text-[13px] font-semibold uppercase tracking-wide ${style.text}`}>
-          {project.category}
-        </span>
-        <h3 className="mt-2 text-xl font-semibold leading-[28px] text-[#333333]">{project.title}</h3>
-        <p className="text-xl font-semibold leading-[28px] text-[#333333]">{project.subtitle}</p>
-        <p className="mt-2 flex-1 text-sm text-gray-500">{project.description}</p>
-        <span
-          className={`mt-4 inline-flex h-9 w-9 items-center justify-center self-end rounded-full transition-transform group-hover:translate-x-1 ${style.button}`}
-        >
-          <ArrowRightIcon width={16} height={16} />
-        </span>
-      </div>
-    </CardTag>
   )
 }

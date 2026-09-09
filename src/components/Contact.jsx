@@ -59,7 +59,7 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
               className="pointer-events-none absolute inset-0 h-full w-full"
             />
             {isProject ? (
-              <p className="relative whitespace-nowrap px-5 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-6 sm:text-[24px]">
+              <p className="relative px-5 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-6 sm:text-[24px] lg:whitespace-nowrap">
                 {lines.map((line, i) => (
                   <span key={line}>
                     {i > 0 && <br />}
