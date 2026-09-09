@@ -62,7 +62,7 @@ export default function ProjectDetail() {
 
         {/* ── Header: description left, mockup + blob right ── */}
         <div className="relative mt-8 lg:min-h-[520px]">
-          <div className="lg:max-w-[540px]">
+          <div className="lg:max-w-[560px]">
             <h1 className="font-playful text-[40px] font-semibold leading-[1.05] text-black sm:text-[52px] lg:text-[68px]">
               {titleLead}
               {project.titleAccent && <span className="text-primary">{project.titleAccent}</span>}
@@ -80,7 +80,7 @@ export default function ProjectDetail() {
             </span>
 
             {/* pill → meta: 36 ; row gap: 16 */}
-            <dl className="mt-9 grid max-w-[520px] grid-cols-2 gap-x-8 gap-y-4">
+            <dl className="mt-9 grid max-w-[540px] grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
               {meta.map(({ icon, w, h, label, value }) => (
                 <div key={label} className="flex items-start gap-3">
                   <img
@@ -100,7 +100,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* desktop: blob + mockup, right-aligned, bleeding toward the frame edge */}
-          <div className="pointer-events-none absolute right-[-40px] top-4 hidden h-[515px] w-[698px] lg:block">
+          <div className="pointer-events-none absolute right-[-64px] top-4 hidden h-[515px] w-[698px] lg:block">
             {Blob}
             <img
               src={detail.hero}
@@ -124,8 +124,8 @@ export default function ProjectDetail() {
         {/* ── Key Features ──  (section gap: 36) */}
         <section className="mt-9">
           <SectionHeading>{t('projectDetail.keyFeatures')}</SectionHeading>
-          {/* heading → grid: 16 ; card gaps: 48 */}
-          <div className="mt-4 grid gap-12 md:grid-cols-2">
+          {/* heading → grid: 16 ; card gaps: 48 (desktop) */}
+          <div className="mt-4 grid gap-8 md:grid-cols-2 lg:gap-12">
             {detail.keyFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} isWeb={isWeb} />
             ))}
@@ -136,7 +136,7 @@ export default function ProjectDetail() {
         {ds && (
           <section className="mt-9">
             <SectionHeading>{t('projectDetail.designSystem')}</SectionHeading>
-            <div className="mt-4 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
               <DsCard title={t('projectDetail.color')} blurb={ds.color.blurb}>
                 <ul className="mt-6 space-y-3">
                   {ds.color.swatches.map((hex) => (
@@ -200,7 +200,7 @@ export default function ProjectDetail() {
                           key={img.src}
                           src={img.src}
                           alt={`${project.title} ${ds.gallery.label} ${i + 1}`}
-                          className="-mx-9 -mb-9 mt-2 w-[calc(100%+4.5rem)] rounded-b-[24px] object-cover"
+                          className="-mx-6 -mb-6 mt-2 w-[calc(100%+3rem)] rounded-b-[24px] object-cover sm:-mx-9 sm:-mb-9 sm:w-[calc(100%+4.5rem)]"
                           style={{ height: img.h }}
                         />
                       ) : (
@@ -245,14 +245,14 @@ function FeatureCard({ feature, isWeb }) {
 
   if (isWeb) {
     return (
-      <div className={`flex flex-col ${CARD} p-9`}>
+      <div className={`flex flex-col ${CARD} p-6 sm:p-9`}>
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
         <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
         {images[0] && (
           <img
             src={images[0]}
             alt={feature.title}
-            className="mt-6 h-[304px] w-full max-w-[504px] rounded-xl object-cover"
+            className="mt-6 aspect-[504/304] w-full max-w-[504px] rounded-xl object-cover"
           />
         )}
       </div>
@@ -260,19 +260,22 @@ function FeatureCard({ feature, isWeb }) {
   }
 
   return (
-    <div className={`flex gap-6 ${CARD} p-9`}>
+    <div className={`flex flex-col gap-6 ${CARD} p-6 sm:p-9 lg:flex-row`}>
       <div className="min-w-0 flex-1">
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
         <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
       </div>
-      <div className="-my-3 -mr-3 flex shrink-0 items-center gap-6">
+      <div className="flex shrink-0 justify-center gap-4 lg:-my-3 lg:-mr-3 lg:items-center lg:gap-6">
         {images.map((src) => (
           <img
             key={src}
             src={src}
             alt={feature.title}
-            style={{ width: single ? 200 : 150, height: 252 }}
-            className={`object-cover ${single ? 'rounded-2xl' : 'rounded-t-[27px] rounded-b-none'}`}
+            className={
+              single
+                ? 'aspect-[200/252] w-[200px] max-w-full rounded-2xl object-cover'
+                : 'aspect-[150/252] w-[150px] max-w-[calc(50%-8px)] shrink rounded-t-[27px] rounded-b-none object-cover lg:max-w-none lg:shrink-0'
+            }
           />
         ))}
       </div>
@@ -283,7 +286,7 @@ function FeatureCard({ feature, isWeb }) {
 // Card padding 36; title → blurb 16; blurb → content 24.
 function DsCard({ title, blurb, children, clip }) {
   return (
-    <div className={`${CARD} p-9 ${clip ? 'overflow-hidden' : ''}`}>
+    <div className={`${CARD} p-6 sm:p-9 ${clip ? 'overflow-hidden' : ''}`}>
       <h3 className="text-[20px] font-semibold text-black">{title}</h3>
       <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{blurb}</p>
       {children}

@@ -22,7 +22,7 @@ export default function Contact({ bubbleText, className = '' }) {
       id="contact"
       className={`mx-auto max-w-[1440px] px-6 pb-12 sm:px-10 lg:px-[72px] ${className}`}
     >
-      <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[24px] px-8 py-8 md:flex-row md:flex-nowrap md:justify-between md:gap-6 md:px-10 lg:pl-[96px] lg:pr-[84px]">
+      <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[24px] px-6 py-8 sm:px-8 lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:pl-[96px] lg:pr-[84px]">
         {/* Direct Figma export (rounded container + two-tone wavy bands) — pixel-exact artwork. */}
         <img
           src={footerBg}
@@ -31,22 +31,22 @@ export default function Contact({ bubbleText, className = '' }) {
           className="pointer-events-none absolute inset-0 h-full w-full"
         />
 
-        <div className="relative flex items-center gap-4 md:gap-9">
+        <div className="relative flex w-full items-center gap-3 sm:w-auto sm:gap-4 lg:gap-9">
           <img
             src={characters}
             alt=""
             aria-hidden="true"
-            className="shrink-0 object-contain"
-            style={{ width: 137, height: 133 }}
+            className="w-[96px] shrink-0 object-contain sm:w-[120px] lg:w-[137px]"
+            style={{ aspectRatio: '137 / 133' }}
           />
-          <div className="relative flex w-[19rem] max-w-full items-center justify-center">
+          <div className="relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none lg:w-[19rem]">
             <img
               src={textBubble}
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 h-full w-full"
             />
-            <p className="relative px-7 py-5 text-center font-playful text-[24px] font-semibold leading-tight text-primary">
+            <p className="relative px-6 py-5 text-center font-playful text-[20px] font-semibold leading-tight text-primary sm:px-7 sm:text-[24px]">
               {text}
             </p>
           </div>

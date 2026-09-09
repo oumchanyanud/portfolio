@@ -19,6 +19,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* keep anchored sections clear of the fixed navbar */
+:target,
+section[id] {
+  scroll-margin-top: 88px;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #ffffff;

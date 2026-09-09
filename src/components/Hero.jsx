@@ -92,7 +92,7 @@ export default function Hero() {
         )}
       </div>
 
-      <div className="relative">
+      <div className="relative w-full">
         {/* aspect-ratio matches the exported Figma frame (695×580) so the photo hole below lines up */}
         <div className="relative mx-auto aspect-[695/580] w-full max-w-[420px] sm:max-w-[480px] md:max-w-[700px]">
           <div
