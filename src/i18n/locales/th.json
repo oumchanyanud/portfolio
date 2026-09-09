@@ -1,0 +1,16 @@
+{
+  "_meta": "Thai copy is a work in progress. Any key missing here falls back to en.json automatically. Fill these in (and translate the content in src/data/*.js) when Thai copy is ready.",
+
+  "nav": {
+    "work": "ผลงาน",
+    "experience": "ประสบการณ์",
+    "about": "เกี่ยวกับ",
+    "contact": "ติดต่อ",
+    "resume": "ดูเรซูเม่"
+  },
+  "language": {
+    "label": "ภาษา",
+    "en": "EN",
+    "th": "TH"
+  }
+}

@@ -1,8 +1,10 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { projects } from '../data/projects'
 import { ArrowRightIcon, BriefcaseIcon, CameraIcon, CodeIcon } from './icons'
 
 export default function ProjectDetail() {
+  const { t } = useTranslation()
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
 
@@ -13,7 +15,7 @@ export default function ProjectDetail() {
   return (
     <section className="mx-auto max-w-[1440px] px-6 pb-10 pt-36 sm:px-10 md:pt-44 lg:px-[72px]">
       <Link to="/" className="inline-flex items-center gap-1 text-base font-medium text-black hover:text-primary">
-        <ArrowRightIcon width={16} height={16} className="rotate-180" /> Back
+        <ArrowRightIcon width={16} height={16} className="rotate-180" /> {t('projectDetail.back')}
       </Link>
 
       <div className="mt-6 rounded-3xl bg-[#fdfdfd] p-8 shadow-sm">
@@ -42,7 +44,7 @@ export default function ProjectDetail() {
         {detail.keyFeatures && detail.keyFeatures.length > 0 && (
           <div className="mt-10">
             <h2 className="flex items-center gap-2 text-xl font-semibold text-black">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Key Features
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> {t('projectDetail.keyFeatures')}
             </h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {detail.keyFeatures.map((feature) => (

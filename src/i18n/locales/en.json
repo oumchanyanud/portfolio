@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "work": "Work",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact",
+    "resume": "View Resume"
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "th": "TH"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "annotation": "This is how I Think!",
+    "openToOpportunities": "Open to opportunities"
+  },
+  "work": {
+    "title": "Selected Works",
+    "subtitle": "Projects that reflect how I think, research and design.",
+    "viewAll": "View all projects",
+    "all": "All",
+    "scrollHint": "Scroll for more",
+    "comingSoonTitle": "Coming soon",
+    "comingSoonBody": "Projects in this category are on the way. Check back soon."
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My journey through research, design and development."
+  },
+  "about": {
+    "title": "About Me",
+    "interestsTitle": "What I'm Into"
+  },
+  "contact": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email"
+  },
+  "projectDetail": {
+    "back": "Back",
+    "keyFeatures": "Key Features",
+    "designSystem": "Design System",
+    "role": "Role",
+    "course": "Course",
+    "platform": "Platform",
+    "tools": "Tools",
+    "color": "Color",
+    "typography": "Typography",
+    "uiElements": "UI Elements",
+    "font": "Font"
+  },
+  "allProjects": {
+    "title": "All Projects",
+    "back": "Back"
+  }
+}

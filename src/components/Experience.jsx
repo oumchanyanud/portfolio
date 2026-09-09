@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { experience } from '../data/experience'
 import { Icon, WorkIcon } from './icons'
 
@@ -24,13 +25,15 @@ const cardSizing = [
 ]
 
 export default function Experience() {
+  const { t } = useTranslation()
   return (
     <section id="experience" className="mx-auto max-w-[1440px] px-6 py-6 sm:px-10 lg:px-[72px]">
       <div className="rounded-3xl bg-[#fdfdfd] p-8 shadow-sm">
         <h2 className="flex items-center gap-2 text-[32px] font-semibold text-black">
-          Experience <WorkIcon width={51.98} height={51.98} className="rotate-[-8.66deg] text-primary" />
+          {t('experience.title')}{' '}
+          <WorkIcon width={51.98} height={51.98} className="rotate-[-8.66deg] text-primary" />
         </h2>
-        <p className="mt-1 font-medium text-[#54575f]">My journey through research, design and development.</p>
+        <p className="mt-1 font-medium text-[#54575f]">{t('experience.subtitle')}</p>
 
         <div className="relative mt-12 px-11">
           <svg

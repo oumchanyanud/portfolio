@@ -69,9 +69,10 @@ export const profile = {
   ],
 }
 
+// `key` maps to i18n (nav.<key>); `label` is the English fallback.
 export const navLinks = [
-  { label: 'Work', href: '/#work' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'About', href: '/#about' },
-  { label: 'Contact', href: '/#contact' },
+  { key: 'work', label: 'Work', href: '/#work' },
+  { key: 'experience', label: 'Experience', href: '/#experience' },
+  { key: 'about', label: 'About', href: '/#about' },
+  { key: 'contact', label: 'Contact', href: '/#contact' },
 ]

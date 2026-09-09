@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import { profile } from '../data/profile'
 import { LinkedInIcon, GitHubIcon, MailIcon, FooterArrowDoodle, FooterSquiggleDoodle } from './icons'
 import footerBg from '../assets/footer-bg.svg'
 import footerCharacters from '../assets/footer-characters.svg'
 
 export default function Contact() {
+  const { t } = useTranslation()
   return (
     <section id="contact" className="mx-auto max-w-[1440px] px-6 pb-12 sm:px-10 lg:px-[72px]">
       <div className="relative flex flex-col items-center justify-between gap-6 overflow-hidden rounded-[24px] px-8 py-8 md:flex-row md:flex-wrap md:justify-center md:px-10 lg:flex-nowrap lg:justify-between">
@@ -27,7 +29,7 @@ export default function Contact() {
             className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition-colors hover:text-primary"
           >
             <LinkedInIcon width={16} height={16} />
-            LinkedIn
+            {t('contact.linkedin')}
           </a>
           <a
             href={profile.links.github}
@@ -36,14 +38,14 @@ export default function Contact() {
             className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition-colors hover:text-primary"
           >
             <GitHubIcon width={16} height={16} />
-            GitHub
+            {t('contact.github')}
           </a>
           <a
             href={profile.links.email}
             className="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition-colors hover:text-primary"
           >
             <MailIcon width={16} height={16} />
-            Email
+            {t('contact.email')}
           </a>
           <FooterSquiggleDoodle className="pointer-events-none absolute -right-4 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-primary sm:block md:-right-7" />
         </div>

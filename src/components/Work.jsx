@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { projectCategories, projects } from '../data/projects'
 import { ArrowRightIcon, SparkleIcon } from './icons'
 
@@ -10,6 +11,7 @@ const categoryStyles = {
 }
 
 export default function Work() {
+  const { t } = useTranslation()
   const [filter, setFilter] = useState('All')
 
   const filters = useMemo(() => {
@@ -29,13 +31,16 @@ export default function Work() {
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="flex items-center gap-2 text-[32px] font-semibold text-black">
-              Selected Works <SparkleIcon className="h-4 w-4 text-primary" />
+              {t('work.title')} <SparkleIcon className="h-4 w-4 text-primary" />
             </h2>
-            <p className="mt-1 font-medium text-[#54575f]">Projects that reflect how I think, research and design.</p>
+            <p className="mt-1 font-medium text-[#54575f]">{t('work.subtitle')}</p>
           </div>
-          {/* TODO: point this at a full projects page/archive once you have one */}
-          <a href="#" className="flex items-center gap-1 text-base font-medium text-black hover:text-primary hover:underline">
-            View all projects <ArrowRightIcon width={16} height={16} />
+          {/* Real destination (/work All Projects page) is added in a later change. */}
+          <a
+            href="/#work"
+            className="flex items-center gap-1 text-base font-medium text-black hover:text-primary hover:underline"
+          >
+            {t('work.viewAll')} <ArrowRightIcon width={16} height={16} />
           </a>
         </div>
 
@@ -49,7 +54,7 @@ export default function Work() {
                   : 'border border-gray-200 text-gray-600 hover:border-primary hover:text-primary'
                 }`}
             >
-              {label} ({count})
+              {label === 'All' ? t('work.all') : label} ({count})
             </button>
           ))}
         </div>
