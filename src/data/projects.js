@@ -96,7 +96,7 @@ export const projects = [
     image: siitCard,
     link: '/work/siit-super-app',
     layout: 'mobile',
-    footerBubble: 'Everything students need, in one place!',
+    footerBubble: ['Everything students need,', 'in one place!'],
     detail: {
       hero: siitHero,
       role: 'UX/UI Designer',
@@ -168,7 +168,7 @@ export const projects = [
     image: friendsCard,
     link: '/work/friends-and-funds',
     layout: 'mobile',
-    footerBubble: 'Plan together. Split smarter.',
+    footerBubble: ['Plan together. Split smarter.'],
     detail: {
       hero: friendsHero,
       role: 'UX/UI Designer',
@@ -241,7 +241,7 @@ export const projects = [
     image: actTrackCard,
     link: '/work/acttrack',
     layout: 'mobile',
-    footerBubble: 'Track progress. Reach your goals!',
+    footerBubble: ['Track progress.', 'Reach your goals!'],
     detail: {
       hero: actTrackHero,
       role: 'UX/UI Designer',
@@ -316,7 +316,7 @@ export const projects = [
     image: managingCard,
     link: '/work/managing',
     layout: 'web',
-    footerBubble: 'Manage better. Work together!',
+    footerBubble: ['Manage better.', 'Work together!'],
     detail: {
       hero: managingHero,
       role: 'UX/UI Designer, Frontend Developer',

@@ -64,7 +64,7 @@ export default function ProjectDetail() {
 
         {/* ── Header: description left, mockup + blob right ── */}
         <div className="relative mt-8 lg:min-h-[520px]">
-          <div className="lg:max-w-[560px]">
+          <div className="lg:max-w-[588px]">
             <h1 className="font-playful text-[40px] font-semibold leading-[1.05] text-black sm:text-[52px] lg:text-[68px]">
               {titleLead}
               {project.titleAccent && <span className="text-primary">{project.titleAccent}</span>}
@@ -92,9 +92,9 @@ export default function ProjectDetail() {
             </span>
 
             {/* pill → meta: 36 ; row gap: 16 */}
-            <dl className="mt-9 grid max-w-[540px] grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+            <dl className="mt-9 grid max-w-[572px] grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
               {meta.map(({ icon, w, h, label, value }) => (
-                <div key={label} className="flex items-start gap-3">
+                <div key={label} className="flex items-start gap-2.5">
                   <img
                     src={icon}
                     alt=""
@@ -112,7 +112,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* desktop: blob + mockup, right-aligned, bleeding toward the frame edge */}
-          <div className="pointer-events-none absolute right-[-64px] top-4 hidden h-[515px] w-[698px] lg:block">
+          <div className="pointer-events-none absolute right-[-96px] top-4 hidden h-[515px] w-[698px] lg:block">
             {Blob}
             <img
               src={detail.hero}

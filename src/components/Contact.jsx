@@ -9,8 +9,9 @@ import textBubble from '../assets/text-bubble.webp'
 // via the section's horizontal padding). `bubbleText` overrides the shared line.
 export default function Contact({ bubbleText, className = '', variant = 'home' }) {
   const { t } = useTranslation()
-  const text = bubbleText || t('contact.bubble')
   const isProject = variant === 'project'
+  // project pages pass an array of lines so the wrap matches the Figma exactly
+  const lines = Array.isArray(bubbleText) ? bubbleText : bubbleText ? [bubbleText] : []
 
   const socialLinks = [
     { href: profile.links.linkedin, label: t('contact.linkedin'), Icon: LinkedInIcon, external: true },
@@ -48,7 +49,7 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
           />
           <div
             className={`relative flex min-w-0 flex-1 items-center justify-center self-center sm:flex-none ${
-              isProject ? 'sm:w-[16rem] lg:w-[21rem]' : 'sm:w-[17rem] lg:w-[23rem]'
+              isProject ? 'sm:w-[17rem] lg:w-[22rem]' : 'sm:w-[17rem] lg:w-[23rem]'
             }`}
           >
             <img
@@ -59,7 +60,12 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
             />
             {isProject ? (
               <p className="relative px-6 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-7 sm:text-[24px]">
-                {text}
+                {lines.map((line, i) => (
+                  <span key={line}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </p>
             ) : (
               <p className="relative px-6 py-3 text-center font-playful font-semibold leading-tight text-primary sm:px-7">
