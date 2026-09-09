@@ -15,7 +15,7 @@ const categoryDot = {
   'Academic Research': 'bg-academic-research',
 }
 
-// Figma-exact card treatment: no border, 24px radius, soft drop shadow.
+// Figma-exact card treatment: no border, 24px radius, 0/4/24 drop shadow.
 const CARD = 'rounded-[24px] bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)]'
 
 // Top mockup image dimensions (Figma): mobile projects vs web projects.
@@ -51,7 +51,7 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-32 sm:px-10 md:pt-40 lg:px-[120px]">
+      <div className="mx-auto max-w-[1440px] px-6 pb-12 pt-32 sm:px-10 md:pt-40 lg:px-[120px]">
         <Link
           to="/#work"
           className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary transition-opacity hover:opacity-70"
@@ -62,22 +62,25 @@ export default function ProjectDetail() {
 
         {/* ── Header: description left, mockup + blob right ── */}
         <div className="relative mt-8 lg:min-h-[520px]">
-          <div className="lg:max-w-[600px]">
-            <h1 className="font-playful text-[40px] font-semibold leading-[1.06] text-black sm:text-[52px] lg:text-[64px]">
+          <div className="lg:max-w-[540px]">
+            <h1 className="font-playful text-[40px] font-semibold leading-[1.05] text-black sm:text-[52px] lg:text-[68px]">
               {titleLead}
               {project.titleAccent && <span className="text-primary">{project.titleAccent}</span>}
             </h1>
 
-            <p className="mt-5 max-w-[30rem] text-[18px] font-medium leading-relaxed text-[#54575f]">
+            {/* title → description: 16 */}
+            <p className="mt-4 max-w-[30rem] text-[18px] font-medium leading-relaxed text-[#54575f]">
               {detail.longDescription}
             </p>
 
-            <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#e7e3f2] bg-white px-4 py-2 text-[16px] font-medium uppercase tracking-[0.06em] text-[#7f7f90]">
+            {/* description → pill: 36 */}
+            <span className="mt-9 inline-flex items-center gap-2 rounded-full border border-[#e7e3f2] bg-white px-4 py-2 text-[16px] font-medium uppercase tracking-[0.06em] text-[#7f7f90]">
               <span className={`h-2 w-2 rounded-full ${categoryDot[project.category]}`} />
               {project.category} Project
             </span>
 
-            <dl className="mt-8 grid max-w-md grid-cols-2 gap-x-10 gap-y-6">
+            {/* pill → meta: 36 ; row gap: 16 */}
+            <dl className="mt-9 grid max-w-[520px] grid-cols-2 gap-x-8 gap-y-4">
               {meta.map(({ icon, w, h, label, value }) => (
                 <div key={label} className="flex items-start gap-3">
                   <img
@@ -97,7 +100,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* desktop: blob + mockup, right-aligned, bleeding toward the frame edge */}
-          <div className="pointer-events-none absolute right-[-24px] top-0 hidden h-[515px] w-[698px] lg:block">
+          <div className="pointer-events-none absolute right-[-40px] top-4 hidden h-[515px] w-[698px] lg:block">
             {Blob}
             <img
               src={detail.hero}
@@ -118,23 +121,24 @@ export default function ProjectDetail() {
           />
         </div>
 
-        {/* ── Key Features ── */}
-        <section className="mt-20">
+        {/* ── Key Features ──  (section gap: 36) */}
+        <section className="mt-9">
           <SectionHeading>{t('projectDetail.keyFeatures')}</SectionHeading>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {/* heading → grid: 16 ; card gaps: 48 */}
+          <div className="mt-4 grid gap-12 md:grid-cols-2">
             {detail.keyFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} isWeb={isWeb} />
             ))}
           </div>
         </section>
 
-        {/* ── Design System ── */}
+        {/* ── Design System ──  (section gap: 36) */}
         {ds && (
-          <section className="mt-20">
+          <section className="mt-9">
             <SectionHeading>{t('projectDetail.designSystem')}</SectionHeading>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-4 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
               <DsCard title={t('projectDetail.color')} blurb={ds.color.blurb}>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-6 space-y-3">
                   {ds.color.swatches.map((hex) => (
                     <li key={hex} className="flex items-center gap-3">
                       <span
@@ -151,7 +155,7 @@ export default function ProjectDetail() {
                 <img
                   src={ds.typography.image}
                   alt={`${project.title} typography sample`}
-                  className="mx-auto mt-4 w-auto object-contain"
+                  className="mx-auto mt-6 w-auto object-contain"
                   style={{ height: 125 }}
                 />
                 <p className="mt-3 text-[13px] font-bold text-black">{t('projectDetail.font')}</p>
@@ -159,7 +163,7 @@ export default function ProjectDetail() {
               </DsCard>
 
               <DsCard title={t('projectDetail.uiElements')} blurb={ds.uiElements.blurb}>
-                <div className="mt-4 space-y-2">
+                <div className="mt-6 space-y-2">
                   {ds.uiElements.images.map((src, i) => (
                     <img
                       key={src}
@@ -171,9 +175,13 @@ export default function ProjectDetail() {
                 </div>
               </DsCard>
 
-              <DsCard title={ds.gallery.label} blurb={ds.gallery.blurb} clip={ds.gallery.kind === 'illustration'}>
+              <DsCard
+                title={ds.gallery.label}
+                blurb={ds.gallery.blurb}
+                clip={ds.gallery.kind === 'illustration'}
+              >
                 {ds.gallery.kind === 'icon' ? (
-                  <div className="mt-4 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-wrap gap-3">
                     {ds.gallery.images.map((img, i) => (
                       <img
                         key={img.src}
@@ -185,14 +193,14 @@ export default function ProjectDetail() {
                     ))}
                   </div>
                 ) : (
-                  <div className="mt-4 flex flex-col items-center gap-3">
+                  <div className="mt-6 flex flex-col items-center gap-3">
                     {ds.gallery.images.map((img, i) =>
                       img.bleed ? (
                         <img
                           key={img.src}
                           src={img.src}
                           alt={`${project.title} ${ds.gallery.label} ${i + 1}`}
-                          className="-mx-5 -mb-5 mt-1 w-[calc(100%+2.5rem)] rounded-b-[24px] object-cover"
+                          className="-mx-9 -mb-9 mt-2 w-[calc(100%+4.5rem)] rounded-b-[24px] object-cover"
                           style={{ height: img.h }}
                         />
                       ) : (
@@ -213,7 +221,8 @@ export default function ProjectDetail() {
         )}
       </div>
 
-      <Contact bubbleText={project.footerBubble} />
+      {/* DS grid → banner: 48 */}
+      <Contact bubbleText={project.footerBubble} className="mt-12" />
     </>
   )
 }
@@ -229,20 +238,21 @@ function SectionHeading({ children }) {
 
 // Mobile projects: text left, phone screenshots right (2 @ 150×252 with 27px top radius,
 // 1 @ 200×252). Web projects: text on top, one wide 504×304 screenshot below.
+// Card padding 36; screenshots inset 24 (pulled 12 out of the 36 padding).
 function FeatureCard({ feature, isWeb }) {
   const images = feature.images?.length ? feature.images : [feature.image].filter(Boolean)
   const single = images.length === 1
 
   if (isWeb) {
     return (
-      <div className={`flex flex-col ${CARD} p-6`}>
+      <div className={`flex flex-col ${CARD} p-9`}>
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
-        <p className="mt-2 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
+        <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
         {images[0] && (
           <img
             src={images[0]}
             alt={feature.title}
-            className="mt-4 h-[304px] w-full max-w-[504px] rounded-xl object-cover"
+            className="mt-6 h-[304px] w-full max-w-[504px] rounded-xl object-cover"
           />
         )}
       </div>
@@ -250,12 +260,12 @@ function FeatureCard({ feature, isWeb }) {
   }
 
   return (
-    <div className={`flex items-center gap-4 ${CARD} p-5`}>
+    <div className={`flex gap-6 ${CARD} p-9`}>
       <div className="min-w-0 flex-1">
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
-        <p className="mt-2 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
+        <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
       </div>
-      <div className="flex shrink-0 items-end gap-3">
+      <div className="-my-3 -mr-3 flex shrink-0 items-center gap-6">
         {images.map((src) => (
           <img
             key={src}
@@ -270,11 +280,12 @@ function FeatureCard({ feature, isWeb }) {
   )
 }
 
+// Card padding 36; title → blurb 16; blurb → content 24.
 function DsCard({ title, blurb, children, clip }) {
   return (
-    <div className={`${CARD} p-5 ${clip ? 'overflow-hidden' : ''}`}>
+    <div className={`${CARD} p-9 ${clip ? 'overflow-hidden' : ''}`}>
       <h3 className="text-[20px] font-semibold text-black">{title}</h3>
-      <p className="mt-1 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{blurb}</p>
+      <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{blurb}</p>
       {children}
     </div>
   )
