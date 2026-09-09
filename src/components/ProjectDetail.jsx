@@ -128,7 +128,7 @@ export default function ProjectDetail() {
                 <img
                   src={ds.typography.image}
                   alt={`${project.title} typography sample`}
-                  className="mt-4 w-full rounded-lg"
+                  className="mx-auto mt-4 max-h-44 w-auto rounded-lg object-contain"
                 />
                 <p className="mt-3 text-[13px] font-bold text-black">{t('projectDetail.font')}</p>
                 <p className="text-[13px] text-[#7f7f90]">{ds.typography.font}</p>
@@ -148,13 +148,17 @@ export default function ProjectDetail() {
               </DsCard>
 
               <DsCard title={ds.gallery.label} blurb={ds.gallery.blurb}>
-                <div className="mt-4 grid grid-cols-2 gap-2">
+                <div
+                  className={`mt-4 grid gap-2 ${
+                    ds.gallery.images.length > 2 ? 'grid-cols-2' : 'grid-cols-1'
+                  }`}
+                >
                   {ds.gallery.images.map((src, i) => (
                     <img
                       key={src}
                       src={src}
                       alt={`${project.title} ${ds.gallery.label} ${i + 1}`}
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg object-contain"
                     />
                   ))}
                 </div>
