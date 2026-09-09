@@ -32,9 +32,10 @@ export default function Contact({ bubbleText }) {
             src={characters}
             alt=""
             aria-hidden="true"
-            className="h-24 w-24 shrink-0 object-contain md:h-28 md:w-28"
+            className="shrink-0 object-contain"
+            style={{ width: 137, height: 133 }}
           />
-          <p className="relative max-w-[15rem] rounded-[28px] rounded-bl-md bg-primary-light px-5 py-3 text-center font-playful text-lg font-bold leading-snug text-primary md:text-xl">
+          <p className="relative max-w-[17rem] rounded-[28px] rounded-bl-md bg-primary-light px-5 py-3 text-center font-playful text-[24px] font-semibold leading-snug text-primary">
             {text}
           </p>
         </div>

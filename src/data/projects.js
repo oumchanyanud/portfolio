@@ -147,8 +147,12 @@ export const projects = [
         },
         gallery: {
           label: 'Illustrations',
+          kind: 'illustration',
           blurb: 'Orca mascot and ocean visuals create a playful campus identity.',
-          images: [siitIllustrations1, siitIllustrations2],
+          images: [
+            { src: siitIllustrations1, w: 172.7, h: 129.82 },
+            { src: siitIllustrations2, w: 244, h: 61, bleed: true },
+          ],
         },
       },
     },
@@ -214,8 +218,12 @@ export const projects = [
         },
         gallery: {
           label: 'Illustrations',
+          kind: 'illustration',
           blurb: 'Playful visuals make expense sharing feel more approachable.',
-          images: [friendsIllustrations1, friendsIllustrations2],
+          images: [
+            { src: friendsIllustrations1, w: 172.7, h: 129.82 },
+            { src: friendsIllustrations2, w: 172.7, h: 129.82 },
+          ],
         },
       },
     },
@@ -282,8 +290,14 @@ export const projects = [
         },
         gallery: {
           label: 'Icons',
+          kind: 'icon',
           blurb: 'Simple activity icons help users quickly recognize different fitness categories.',
-          images: [actTrackIcons1, actTrackIcons2, actTrackIcons3, actTrackIcons4],
+          images: [
+            { src: actTrackIcons1, w: 63 },
+            { src: actTrackIcons2, w: 63 },
+            { src: actTrackIcons3, w: 63 },
+            { src: actTrackIcons4, w: 63 },
+          ],
         },
       },
     },
@@ -351,8 +365,13 @@ export const projects = [
         },
         gallery: {
           label: 'Icons',
+          kind: 'icon',
           blurb: 'Simple action icons make inventory and communication tasks easy to recognize.',
-          images: [managingIcons1, managingIcons2, managingIcons3],
+          images: [
+            { src: managingIcons1, w: 63 },
+            { src: managingIcons2, w: 63 },
+            { src: managingIcons3, w: 63 },
+          ],
         },
       },
     },
