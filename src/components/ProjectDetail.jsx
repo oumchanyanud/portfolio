@@ -70,8 +70,18 @@ export default function ProjectDetail() {
               {project.titleAccent && <span className="text-primary">{project.titleAccent}</span>}
             </h1>
 
-            {/* title → description: 16 */}
-            <p className="mt-4 max-w-[30rem] text-[18px] font-medium leading-relaxed text-[#54575f]">
+            {/* mobile / tablet: screenshot preview sits between the title and the description */}
+            <div className="relative mx-auto mt-6 aspect-[698/515] w-full max-w-[460px] lg:hidden">
+              {Blob}
+              <img
+                src={detail.hero}
+                alt={project.title}
+                className="absolute left-1/2 top-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 object-contain"
+              />
+            </div>
+
+            {/* title → description: 16 (desktop) */}
+            <p className="mt-6 max-w-[30rem] text-[18px] font-medium leading-relaxed text-[#54575f] lg:mt-4">
               {detail.longDescription}
             </p>
 
@@ -111,16 +121,6 @@ export default function ProjectDetail() {
               style={{ width: heroSize.width, height: heroSize.height }}
             />
           </div>
-        </div>
-
-        {/* mobile / tablet: stacked mockup */}
-        <div className="relative mx-auto mt-10 aspect-[698/515] w-full max-w-[460px] lg:hidden">
-          {Blob}
-          <img
-            src={detail.hero}
-            alt={project.title}
-            className="absolute left-1/2 top-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 object-contain"
-          />
         </div>
 
         {/* ── Key Features ──  (section gap: 36) */}
@@ -224,7 +224,7 @@ export default function ProjectDetail() {
       </div>
 
       {/* DS grid → banner: 48 */}
-      <Contact bubbleText={project.footerBubble} className="mt-12" />
+      <Contact bubbleText={project.footerBubble} variant="project" className="mt-12" />
     </>
   )
 }
@@ -261,13 +261,19 @@ function FeatureCard({ feature, isWeb }) {
     )
   }
 
+  // Desktop: screenshots sit against the bottom edge of the card (bottom inset 0),
+  // 24 from the top and 24 from the right; the card holds their 252px height.
   return (
-    <div className={`flex flex-col gap-6 ${CARD} p-6 sm:p-9 lg:flex-row lg:items-start`}>
-      <div className="min-w-0 flex-1">
+    <div
+      className={`${CARD} relative flex flex-col gap-6 overflow-hidden p-6 sm:p-9 lg:block lg:min-h-[276px] lg:gap-0 ${
+        single ? 'lg:pr-[204px]' : 'lg:pr-[328px]'
+      }`}
+    >
+      <div className="min-w-0">
         <h3 className="text-[20px] font-semibold text-black">{feature.title}</h3>
         <p className="mt-4 text-[16px] font-medium leading-relaxed text-[#7f7f90]">{feature.description}</p>
       </div>
-      <div className="flex shrink-0 justify-center gap-4 lg:-mr-3 lg:-mt-3 lg:gap-6">
+      <div className="flex justify-center gap-4 lg:absolute lg:bottom-0 lg:right-6 lg:top-6 lg:items-end lg:justify-end lg:gap-6">
         {images.map((src) => (
           <img
             key={src}
@@ -275,8 +281,8 @@ function FeatureCard({ feature, isWeb }) {
             alt={feature.title}
             className={
               single
-                ? 'aspect-[200/252] w-[200px] max-w-full rounded-2xl object-cover'
-                : 'aspect-[150/252] w-[150px] max-w-[calc(50%-8px)] shrink rounded-t-[27px] rounded-b-none object-cover lg:max-w-none lg:shrink-0'
+                ? 'aspect-[200/252] w-[200px] max-w-full rounded-t-[27px] rounded-b-none object-cover lg:aspect-auto lg:h-[252px]'
+                : 'aspect-[150/252] w-[150px] max-w-[calc(50%-8px)] shrink rounded-t-[27px] rounded-b-none object-cover lg:aspect-auto lg:h-[252px] lg:max-w-none lg:shrink-0'
             }
           />
         ))}

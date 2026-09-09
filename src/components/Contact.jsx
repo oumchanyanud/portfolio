@@ -5,11 +5,13 @@ import footerBg from '../assets/footer-bg.svg'
 import characters from '../assets/characters.webp'
 import textBubble from '../assets/text-bubble.webp'
 
-// `bubbleText` lets project pages show their own line ("Everything students need, in one place!" …);
-// the home page falls back to the shared contact.bubble string.
-export default function Contact({ bubbleText, className = '' }) {
+// `variant` sizes the band: the home banner is more compact than the project one
+// (Figma: project band ≈ 142px tall, 137×133 character; home band is shorter).
+// `bubbleText` lets project pages show their own line.
+export default function Contact({ bubbleText, className = '', variant = 'home' }) {
   const { t } = useTranslation()
   const text = bubbleText || t('contact.bubble')
+  const isProject = variant === 'project'
 
   const socialLinks = [
     { href: profile.links.linkedin, label: t('contact.linkedin'), Icon: LinkedInIcon, external: true },
@@ -22,7 +24,11 @@ export default function Contact({ bubbleText, className = '' }) {
       id="contact"
       className={`mx-auto max-w-[1440px] px-6 pb-12 sm:px-10 lg:px-[72px] ${className}`}
     >
-      <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[24px] px-6 py-8 sm:px-8 lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:pl-[96px] lg:pr-[84px]">
+      <div
+        className={`relative flex flex-col items-center gap-5 overflow-hidden rounded-[24px] px-6 py-6 sm:px-8 lg:flex-row lg:flex-nowrap lg:justify-between lg:gap-6 lg:py-2 lg:pl-[96px] lg:pr-[84px] ${
+          isProject ? 'lg:min-h-[142px]' : 'lg:min-h-[116px]'
+        }`}
+      >
         {/* Direct Figma export (rounded container + two-tone wavy bands) — pixel-exact artwork. */}
         <img
           src={footerBg}
@@ -36,17 +42,27 @@ export default function Contact({ bubbleText, className = '' }) {
             src={characters}
             alt=""
             aria-hidden="true"
-            className="w-[96px] shrink-0 object-contain sm:w-[120px] lg:w-[137px]"
+            className={`w-[92px] shrink-0 object-contain sm:w-[116px] ${
+              isProject ? 'lg:w-[137px]' : 'lg:w-[112px]'
+            }`}
             style={{ aspectRatio: '137 / 133' }}
           />
-          <div className="relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none lg:w-[21rem]">
+          <div
+            className={`relative flex min-w-0 flex-1 items-center justify-center sm:w-[16rem] sm:flex-none ${
+              isProject ? 'lg:w-[21rem]' : 'lg:w-[22rem]'
+            }`}
+          >
             <img
               src={textBubble}
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 h-full w-full"
             />
-            <p className="relative px-6 py-5 text-center font-playful text-[20px] font-semibold leading-tight text-primary sm:px-7 sm:text-[24px]">
+            <p
+              className={`relative px-6 py-4 text-center font-playful text-[19px] font-semibold leading-tight text-primary sm:px-7 ${
+                isProject ? 'sm:text-[24px]' : 'sm:text-[22px]'
+              }`}
+            >
               {text}
             </p>
           </div>
