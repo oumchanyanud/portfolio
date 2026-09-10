@@ -52,10 +52,16 @@
     "color": "Color",
     "typography": "Typography",
     "uiElements": "UI Elements",
-    "font": "Font"
+    "font": "Font",
+    "projectTag": "{{category}} Project"
   },
   "allProjects": {
     "title": "All Projects",
     "back": "Back"
+  },
+  "categories": {
+    "UX Research": "UX Research",
+    "Product Design": "Product Design",
+    "Academic Research": "Academic Research"
   }
 }

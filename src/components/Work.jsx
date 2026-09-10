@@ -1,12 +1,14 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { projectCategories, projects, availableCategories } from '../data/projects'
+import { projectCategories, availableCategories } from '../data/projects'
+import { useLocalizedData } from '../data/localized'
 import { ArrowRightIcon, SparkleIcon } from './icons'
 import ProjectCard from './ProjectCard'
 
 export default function Work() {
   const { t } = useTranslation()
+  const { projects } = useLocalizedData()
   const [filter, setFilter] = useState('All')
   const trackRef = useRef(null)
 
@@ -16,7 +18,7 @@ export default function Work() {
       counts[category] = projects.filter((p) => p.category === category).length
     }
     return ['All', ...projectCategories].map((label) => ({ label, count: counts[label] }))
-  }, [])
+  }, [projects])
 
   const visibleProjects =
     filter === 'All' ? projects : projects.filter((p) => p.category === filter)
@@ -82,7 +84,7 @@ export default function Work() {
                   : 'border border-gray-200 text-gray-600 hover:border-primary hover:text-primary'
               }`}
             >
-              {label === 'All' ? t('work.all') : label} ({count})
+              {label === 'All' ? t('work.all') : t(`categories.${label}`, label)} ({count})
             </button>
           ))}
         </div>

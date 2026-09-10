@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ArrowRightIcon } from './icons'
 
 const categoryStyles = {
@@ -10,6 +11,7 @@ const categoryStyles = {
 // layout: 'carousel' — fixed peek width for the home scroller (3 fit at md+);
 //         'grid' — fills its grid cell on the All Projects page.
 export default function ProjectCard({ project, layout = 'carousel' }) {
+  const { t } = useTranslation()
   const style = categoryStyles[project.category] ?? {
     text: 'text-gray-600',
     button: 'bg-gray-100 text-gray-600',
@@ -42,7 +44,7 @@ export default function ProjectCard({ project, layout = 'carousel' }) {
       </div>
       <div className="flex flex-1 flex-col border-t border-[#d9d6e4] p-5">
         <span className={`text-[13px] font-semibold uppercase tracking-wide ${style.text}`}>
-          {project.category}
+          {t(`categories.${project.category}`, project.category)}
         </span>
         <h3 className="mt-2 text-xl font-semibold leading-[28px] text-[#333333]">{project.title}</h3>
         <p className="text-xl font-semibold leading-[28px] text-[#333333]">{project.subtitle}</p>

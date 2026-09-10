@@ -1,6 +1,4 @@
 {
-  "_meta": "Thai copy is a work in progress. Any key missing here falls back to en.json automatically. Fill these in (and translate the content in src/data/*.js) when Thai copy is ready.",
-
   "nav": {
     "work": "ผลงาน",
     "experience": "ประสบการณ์",
@@ -12,5 +10,58 @@
     "label": "ภาษา",
     "en": "EN",
     "th": "TH"
+  },
+  "hero": {
+    "greeting": "สวัสดีค่ะ ฉันชื่อ",
+    "annotation": "นี่คือวิธีคิดของฉัน!",
+    "openToOpportunities": "เปิดรับโอกาสใหม่ ๆ"
+  },
+  "work": {
+    "title": "ผลงานที่คัดสรร",
+    "subtitle": "โปรเจกต์ที่สะท้อนวิธีคิด การวิจัย และการออกแบบของฉัน",
+    "viewAll": "ดูผลงานทั้งหมด",
+    "all": "ทั้งหมด",
+    "scrollHint": "เลื่อนเพื่อดูเพิ่มเติม",
+    "comingSoonTitle": "เร็ว ๆ นี้",
+    "comingSoonBody": "โปรเจกต์ในหมวดนี้กำลังจะมา แวะกลับมาดูใหม่เร็ว ๆ นี้"
+  },
+  "experience": {
+    "title": "ประสบการณ์",
+    "subtitle": "เส้นทางของฉันผ่านการวิจัย การออกแบบ และการพัฒนา"
+  },
+  "about": {
+    "title": "เกี่ยวกับฉัน",
+    "interestsTitle": "สิ่งที่ฉันสนใจ"
+  },
+  "contact": {
+    "bubble": "มาสร้างประสบการณ์ที่มีความหมายไปด้วยกัน!",
+    "bubbleLead": "มาสร้าง",
+    "bubbleRest": "ประสบการณ์ที่มีความหมายไปด้วยกัน!",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "อีเมล"
+  },
+  "projectDetail": {
+    "back": "ย้อนกลับ",
+    "keyFeatures": "ฟีเจอร์หลัก",
+    "designSystem": "ระบบการออกแบบ",
+    "role": "บทบาท",
+    "course": "รายวิชา",
+    "platform": "แพลตฟอร์ม",
+    "tools": "เครื่องมือ",
+    "color": "สี",
+    "typography": "ตัวอักษร",
+    "uiElements": "องค์ประกอบ UI",
+    "font": "ฟอนต์",
+    "projectTag": "โปรเจกต์{{category}}"
+  },
+  "allProjects": {
+    "title": "ผลงานทั้งหมด",
+    "back": "ย้อนกลับ"
+  },
+  "categories": {
+    "UX Research": "การวิจัย UX",
+    "Product Design": "การออกแบบผลิตภัณฑ์",
+    "Academic Research": "การวิจัยเชิงวิชาการ"
   }
 }

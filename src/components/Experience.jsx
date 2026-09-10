@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { experience } from '../data/experience'
+import { useLocalizedData } from '../data/localized'
 import { Icon, WorkIcon } from './icons'
 
 const colorStyles = {
@@ -26,6 +26,7 @@ const cardSizing = [
 
 export default function Experience() {
   const { t } = useTranslation()
+  const { experience } = useLocalizedData()
   return (
     <section id="experience" className="mx-auto max-w-[1440px] px-6 py-6 sm:px-10 lg:px-[72px]">
       <div className="rounded-3xl bg-[#fdfdfd] p-8 shadow-sm">

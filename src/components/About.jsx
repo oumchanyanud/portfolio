@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next'
-import { profile } from '../data/profile'
+import { useLocalizedData } from '../data/localized'
 import { Icon, RobotIcon } from './icons'
 
 export default function About() {
   const { t } = useTranslation()
+  const { profile } = useLocalizedData()
   return (
     <section id="about" className="mx-auto max-w-[1440px] px-6 py-6 sm:px-10 lg:px-[72px]">
       {/* Figma card sizes: About 470×383, What I'm Into 778×383, 48 gap */}

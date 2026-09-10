@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { projects } from '../data/projects'
+import { useLocalizedData } from '../data/localized'
 import Contact from './Contact'
 import { ArrowRightIcon } from './icons'
 import blob from '../assets/project-detail/blob.webp'
@@ -26,6 +26,7 @@ const HERO_SIZE = {
 
 export default function ProjectDetail() {
   const { t } = useTranslation()
+  const { projects } = useLocalizedData()
   const { slug } = useParams()
   const project = projects.find((p) => p.slug === slug)
 
@@ -88,7 +89,9 @@ export default function ProjectDetail() {
             {/* description → pill: 36 */}
             <span className="mt-9 inline-flex items-center gap-2 rounded-full border border-[#e7e3f2] bg-white px-4 py-2 text-[16px] font-medium uppercase tracking-[0.06em] text-[#7f7f90]">
               <span className={`h-2 w-2 rounded-full ${categoryDot[project.category]}`} />
-              {project.category} Project
+              {t('projectDetail.projectTag', {
+                category: t(`categories.${project.category}`, project.category),
+              })}
             </span>
 
             {/* pill → meta: 36 ; row gap: 16 */}

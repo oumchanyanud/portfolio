@@ -1,7 +1,7 @@
-import { profile } from '../data/profile'
-import { LinkedInIcon, GitHubIcon, MailIcon, SparkleIcon, CurvedArrowIcon } from './icons'
+import { useTranslation } from 'react-i18next'
+import { useLocalizedData } from '../data/localized'
+import { LinkedInIcon, GitHubIcon, MailIcon } from './icons'
 import heroFrame from '../assets/hero-frame.svg'
-import hiImBubble from '../assets/hi-im-bubble.svg'
 
 // heroFrame is a direct "Copy as SVG" export from the Figma file (Home group), cropped to just
 // the photo cluster and stripped of the placeholder photo pixels — the search/heart icons, the
@@ -15,6 +15,8 @@ const PHOTO_HOLE = { left: '18.37%', top: '5.86%', width: '63.74%', height: '88.
 const HERO_LEFT_WIDTH = 45
 
 export default function Hero() {
+  const { t } = useTranslation()
+  const { profile } = useLocalizedData()
   return (
     <section
       id="home"
@@ -87,7 +89,7 @@ export default function Hero() {
         {profile.openToOpportunities && (
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-1.5 text-base font-medium text-black md:ml-[6.84%]">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Open to opportunities
+            {t('hero.openToOpportunities')}
           </div>
         )}
       </div>
