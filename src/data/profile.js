@@ -5,7 +5,7 @@ export const profile = {
   name: 'Chanyanud',
   fullName: 'Chanyanud Sriyota',
   initials: 'CS',
-  title: 'UX Researcher & Designer',
+  title: 'User Experience Researcher & Designer',
   tagline: {
     before: 'Understanding ',
     highlight1: 'people',
@@ -15,26 +15,27 @@ export const profile = {
   },
   annotation: 'This is how I Think!',
   bio: [
-    "I'm a UX Researcher who loves turning user insights into meaningful digital experiences.",
-    'Currently exploring Digital Banking, Accessibility and Human-Centered Design.',
+    "I'm a UX Researcher who loves turning user insights",
+    'into meaningful digital experiences.',
+    'Currently exploring Digital Banking, Accessibility and',
+    'Human-Centered Design.',
   ],
   openToOpportunities: true,
 
   photo: profilePhoto,
 
-  // TODO: put your resume PDF in /public (e.g. public/resume.pdf) and update this path
-  resumeUrl: '/resume.pdf',
+  // Résumé lives at public/resume.pdf; BASE_URL keeps the link correct under /portfolio/.
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 
-  // TODO: replace with your real profile URLs
   links: {
-    linkedin: 'https://linkedin.com/in/TODO',
-    github: 'https://github.com/TODO',
-    email: 'mailto:TODO@example.com',
+    linkedin: 'https://www.linkedin.com/in/chanyanud-sriyota-b1ab65282/',
+    github: 'https://github.com/oumchanyanud',
+    email: 'mailto:chanyanud.sri@gmail.com',
   },
 
   // Variant controls color: "purple" | "green" | "white"
   heroTags: [
-    { label: 'UX Research', variant: 'purple', position: 'top-left' },
+    { label: 'User Experience Research', variant: 'purple', position: 'top-left' },
     { label: 'Human-Centered Design', variant: 'white', position: 'top-right' },
     { label: 'Usability Testing', variant: 'white', position: 'mid-left' },
     { label: 'Digital Product', variant: 'purple', position: 'mid-right' },
@@ -47,10 +48,10 @@ export const profile = {
       'Computer Engineering graduate with a passion for understanding people and solving real problems.',
       'I enjoy turning complex user needs into simple, meaningful solutions through research, design and technology.',
     ],
-    // TODO: update location / graduation date
+    // width/height are the Figma pill sizes; `twoLine` wraps the label.
     facts: [
-      { icon: 'pin', label: 'Bangkok, Thailand' },
-      { icon: 'cap', label: 'Graduated May 2026' },
+      { icon: 'pin', label: 'Bangkok, Thailand', w: 137, h: 67, twoLine: true },
+      { icon: 'cap', label: 'Graduated May 2026', w: 229, h: 67 },
     ],
   },
 
@@ -70,9 +71,10 @@ export const profile = {
   ],
 }
 
+// `key` maps to i18n (nav.<key>); `label` is the English fallback.
 export const navLinks = [
-  { label: 'Work', href: '/#work' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'About', href: '/#about' },
-  { label: 'Contact', href: '/#contact' },
+  { key: 'work', label: 'Work', href: '/#work' },
+  { key: 'experience', label: 'Experience', href: '/#experience' },
+  { key: 'about', label: 'About', href: '/#about' },
+  { key: 'contact', label: 'Contact', href: '/#contact' },
 ]

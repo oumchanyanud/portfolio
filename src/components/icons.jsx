@@ -31,7 +31,7 @@ export function GitHubIcon(props) {
   )
 }
 
-// mingcute:bank-line — matches the Figma "UX Research Intern" timeline icon.
+// mingcute:bank-line — matches the Figma "User Experience Research Intern" timeline icon.
 export function BankIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
@@ -257,6 +257,43 @@ export function FooterSquiggleDoodle(props) {
         stroke="currentColor"
         strokeWidth="2"
       />
+    </svg>
+  )
+}
+
+// Project-detail meta icons (Role / Course / Platform / Tools).
+export function PersonIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M5.5 21a7.5 7.5 0 0 1 13 0" />
+    </svg>
+  )
+}
+
+export function BookIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+      <path d="M9 3v10l2.5-1.6L14 13V3" />
+    </svg>
+  )
+}
+
+export function DevicesIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="2" y="4" width="14" height="11" rx="2" />
+      <path d="M2 19h14" />
+      <rect x="17" y="9" width="5" height="11" rx="1.5" />
+    </svg>
+  )
+}
+
+export function ToolsIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-2.4z" />
     </svg>
   )
 }

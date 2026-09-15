@@ -1,0 +1,347 @@
+{
+  "nav": {
+    "work": "Work",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact",
+    "resume": "View Resume"
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "th": "TH"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "annotation": "This is how I Think!",
+    "openToOpportunities": "Open to opportunities"
+  },
+  "work": {
+    "title": "Selected Works",
+    "subtitle": "Projects that reflect how I think, research and design.",
+    "viewAll": "View all projects",
+    "all": "All",
+    "scrollHint": "Scroll for more",
+    "comingSoonTitle": "Coming soon",
+    "comingSoonBody": "Projects in this category are on the way. Check back soon."
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My journey through research, design and development."
+  },
+  "about": {
+    "title": "About Me",
+    "interestsTitle": "What I'm Into"
+  },
+  "contact": {
+    "bubble": "Let's create meaningful experiences together!",
+    "bubbleLead": "Let's create",
+    "bubbleRest": "meaningful experiences together!",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email"
+  },
+  "projectDetail": {
+    "back": "Back",
+    "keyFeatures": "Key Features",
+    "designSystem": "Design System",
+    "role": "Role",
+    "course": "Course",
+    "platform": "Platform",
+    "tools": "Tools",
+    "color": "Color",
+    "typography": "Typography",
+    "uiElements": "UI Elements",
+    "font": "Font",
+    "projectTag": "{{category}} Project"
+  },
+  "allProjects": {
+    "title": "All Projects",
+    "back": "Back"
+  },
+  "categories": {
+    "User Experience Research": "User Experience Research",
+    "Product Design": "Product Design",
+    "Academic Research": "Academic Research"
+  },
+  "usabilityTesting": {
+    "title": "Usability Testing",
+    "intro": "During my User Experience Research internship at ttb, I helped validate digital banking experiences before they reached development — planning research, recruiting participants, running sessions, and presenting findings to cross-functional stakeholders.",
+    "meta": {
+      "role": { "label": "Role", "value": "User Experience Research Intern" },
+      "company": { "label": "Company", "value": "TMBThanachart Bank (ttb)" },
+      "tools": { "label": "Tools", "value": "Figma · Jira · PowerPoint" },
+      "duration": { "label": "Duration", "value": "January – May 2026" },
+      "scope": { "label": "Scope", "value": "12 usability testing projects across multiple financial product verticals" },
+      "methods": { "label": "Methods", "value": "Usability Testing · SEQ · Severity Classification" }
+    },
+    "whyWeTested": {
+      "title": "Why We Tested",
+      "body": "Before features moved into development, I tested prototypes to identify usability risks, validate user understanding, and surface issues early.",
+      "flow": ["Design Request", "Research", "Findings", "Design Improvement", "Development"],
+      "transition": "Each study had different business goals and target users, but the core research question stayed the same:",
+      "quote": "Can users understand the experience and complete the task without unnecessary confusion?"
+    },
+    "process": {
+      "title": "My Usability Testing Process",
+      "phases": [
+        {
+          "title": "Understand",
+          "blurb": "Build context and define what needs to be validated.",
+          "items": ["Review project background and requirements", "Walk through prototype flows", "Understand target users and business goals", "Define research objectives and key questions"]
+        },
+        {
+          "title": "Prepare",
+          "blurb": "Turn research goals into a well-prepared study.",
+          "items": ["Prepare task scenarios", "Create observe notes and testing script", "Recruit participants based on criteria", "Conduct a dry run to validate the study"]
+        },
+        {
+          "title": "Test & Observe",
+          "blurb": "Understand what users do, think, and feel.",
+          "items": ["Facilitate usability testing sessions", "Encourage think-aloud and ask unbiased questions", "Observe hesitation, navigation patterns, and unexpected actions", "Measure task ease using SEQ"]
+        },
+        {
+          "title": "Synthesize & Communicate",
+          "blurb": "Turn observations into insights that drive decisions.",
+          "items": ["Synthesize usability issues and patterns", "Classify issue severity", "Develop actionable recommendations", "Prepare research reports and present findings"]
+        }
+      ],
+      "output": "Output: Actionable recommendations for product and design teams",
+      "confidentialityNote": "Project-specific materials and findings are omitted due to confidentiality."
+    },
+    "contributions": {
+      "title": "My Contributions",
+      "items": [
+        { "title": "Research Planning", "description": "Reviewed project context, business requirements, prototypes, and aligned research objectives." },
+        { "title": "Participant Recruitment", "description": "Recruited participants based on project-specific demographic and behavioral criteria." },
+        { "title": "Moderation & Observation", "description": "Conducted sessions as moderator or observer and documented user behavior, hesitation, and usability issues." },
+        { "title": "Synthesis & Communication", "description": "Analyzed findings, applied SEQ and severity classification, prepared User Experience reports, and communicated recommendations to stakeholders." }
+      ]
+    },
+    "duringSession": {
+      "label": "During the Session",
+      "quote": "I learned to look beyond what participants said — hesitation, repeated actions, and navigation patterns often revealed usability issues that verbal feedback alone did not capture.",
+      "observedLabel": "What I observed",
+      "behaviors": ["Hesitation", "Navigation patterns", "Repeated actions", "Unexpected behavior"]
+    },
+    "measuring": {
+      "title": "Measuring Usability",
+      "seq": {
+        "title": "SEQ (Single Ease Question)",
+        "taskLabel": "User completes task",
+        "question": "“How easy or difficult was this task?”",
+        "veryDifficult": "Very difficult",
+        "veryEasy": "Very easy"
+      },
+      "severity": {
+        "title": "Severity Classification",
+        "intro": "We classify usability issues to prioritize what matters most.",
+        "levels": [
+          { "label": "Stopper", "description": "Blocks users from completing the task." },
+          { "label": "Major", "description": "Significantly affects user experience or task success." },
+          { "label": "Minor", "description": "Causes some frustration but the task can continue." },
+          { "label": "Aesthetic Issue", "description": "Visual or cosmetic issues with low usability impact." }
+        ]
+      }
+    },
+    "findingsToDecisions": {
+      "title": "From Findings to Product Decisions",
+      "bodyLead": "I turned findings into ",
+      "bodyStrong1": "actionable recommendations for designers and product teams",
+      "bodyMid": ". Some were ",
+      "bodyStrong2": "incorporated into the design before development",
+      "bodyTail": ", catching usability risks earlier in the product lifecycle.",
+      "pipeline": [
+        { "label": "Observed Behavior", "sub": "What users did" },
+        { "label": "Usability Issue", "sub": "What the problem is" },
+        { "label": "Severity", "sub": "How severe the impact is" },
+        { "label": "Recommendation", "sub": "What should change" },
+        { "label": "Design Decision", "sub": "Applied before development" }
+      ]
+    },
+    "confidentiality": {
+      "title": "Confidentiality Notice",
+      "body1": "To protect user privacy and ttb's business confidentiality, project-specific materials, participant information, and detailed findings are not shown here.",
+      "body2Lead": "This page summarizes the general usability testing workflow I followed across ",
+      "body2Strong": "12 digital banking projects",
+      "body2Tail": " during my internship at ttb."
+    },
+    "bubble": ["Understanding people.", "Designing better experiences."]
+  },
+  "academicResearch": {
+    "kicker": "Academic Research",
+    "title": "Automated Detection and Segmentation of Choroidal Neovascularization in OCT Using Deep Learning",
+    "short": "A comparative deep-learning study exploring automated detection and localization of Choroidal Neovascularization (CNV) in retinal OCT images.",
+    "meta": {
+      "role": { "label": "Role", "value": "Research Assistant / Co-author" },
+      "field": { "label": "Field", "value": "Medical Imaging AI" },
+      "period": { "label": "Research Period", "value": "Aug 2024 – Dec 2025" },
+      "publication": { "label": "Publication", "value": "Science & Technology Asia, Vol. 30 No. 3, 2025" }
+    },
+    "metaNote": "Role and research period reflect my personal project record — every research finding on this page is drawn directly from the published paper.",
+    "publicationCta": "View Publication",
+    "bestOverallBadge": "Best Overall",
+    "glance": {
+      "title": "Research at a Glance",
+      "subtitle": "A quick scan of the scope and headline results.",
+      "metrics": [
+        { "value": "500", "label": "OCT images used for evaluation" },
+        { "value": "6", "label": "Deep-learning architectures compared" },
+        { "value": "99.4%", "label": "Best CNV classification accuracy" },
+        { "value": "80.05%", "label": "Best CNV localization F1-score" },
+        { "value": "DeepLabV3++", "label": "Best overall-performing architecture" }
+      ]
+    },
+    "problem": {
+      "title": "The Problem",
+      "body1": "Choroidal Neovascularization (CNV) is the abnormal growth of blood vessels beneath the retina and is commonly associated with age-related macular degeneration (AMD). CNV can lead to vision impairment.",
+      "body2": "Optical Coherence Tomography (OCT) captures detailed cross-sectional images of the retina and is widely used to detect CNV. But reading those scans is hard: CNV lesions vary in size, shape, and appearance, and OCT images often contain noise, motion artifacts, and other retinal abnormalities that can be mistaken for CNV.",
+      "challengesTitle": "Why CNV is hard to read",
+      "challenges": ["Varies in size, shape & appearance", "Noise & motion artifacts", "Easily confused with other retinal abnormalities", "Subtle, low-contrast lesions"],
+      "flow": ["OCT Image", "Detect CNV?", "Localize CNV Region"],
+      "closing": "Manual interpretation can be challenging and time-consuming — creating an opportunity to explore automated deep-learning approaches for CNV detection and localization.",
+      "imageCaption": "Healthy OCT (top) vs. OCT with CNV, highlighted (bottom)."
+    },
+    "objective": {
+      "title": "Research Objective",
+      "taskLabel": "Task {{n}}",
+      "tasks": [
+        { "n": "01", "title": "CNV Image Detection", "body": "Determine whether an OCT image contains CNV." },
+        { "n": "02", "title": "CNV Localization / Segmentation", "body": "Identify the CNV region at pixel level." }
+      ],
+      "goal": "Identify the optimal architecture for CNV image detection and localization using a balanced OCT dataset."
+    },
+    "contribution": {
+      "title": "My Contribution",
+      "intro": "As a co-author of the published study, my contribution focused on ground-truth annotation, researching deep-learning approaches, and analyzing candidate architectures to support model selection. The implementation, training, and results presented below reflect the work of the research team as a whole.",
+      "items": [
+        { "title": "Ground Truth Annotation", "body": "Highlighted CNV regions in OCT images to contribute to the ground-truth annotations used in the study." },
+        { "title": "Model Research", "body": "Researched deep-learning architectures and studied their underlying principles, strengths, and suitability for CNV detection and segmentation." },
+        { "title": "Model Analysis & Selection", "body": "Compared candidate architectures and contributed to selecting models for experimentation, which were then implemented and trained by other team members." }
+      ]
+    },
+    "pipeline": {
+      "title": "Research Pipeline",
+      "subtitle": "From raw OCT scan to model comparison.",
+      "phases": [
+        { "n": "01", "title": "Preprocess", "steps": ["OCT Images", "Image Preprocessing", "Median Filtering"] },
+        { "n": "02", "title": "Detect", "steps": ["CNV Classification"] },
+        { "n": "03", "title": "Localize", "steps": ["CNV-Positive Images", "CNV Segmentation"] },
+        { "n": "04", "title": "Evaluate", "steps": ["Evaluation", "Model Comparison"] }
+      ]
+    },
+    "setup": {
+      "title": "Dataset & Experiment Setup",
+      "dataset": {
+        "title": "Dataset",
+        "items": ["Retinal OCT images, resized to 512 × 512", "Evaluation set: 500 manually selected OCT images", "250 CNV-positive · 250 CNV-negative (normal)"]
+      },
+      "training": {
+        "title": "Training Setup",
+        "items": ["Models trained with an 80/20 train–evaluation split", "Data augmentation: rotation, shifting, zooming, flipping", "Google Colab · NVIDIA T4 GPU"]
+      }
+    },
+    "models": {
+      "title": "Models Explored",
+      "intro": "Six deep-learning architectures were evaluated under the same experimental setting to compare their performance in CNV detection and localization.",
+      "items": [
+        { "name": "U-Net", "description": "Encoder-decoder baseline widely used in medical image segmentation." },
+        { "name": "Attention U-Net", "description": "Extends U-Net with attention mechanisms to emphasize relevant regions." },
+        { "name": "DeepLabV3+", "description": "Uses multi-scale contextual information for semantic segmentation." },
+        { "name": "DeepLabV3++", "description": "Refined DeepLab variant that ultimately delivered the strongest overall balance of detection, localization, and training efficiency." },
+        { "name": "Mask R-CNN", "description": "Instance-segmentation approach capable of identifying isolated regions." },
+        { "name": "Mask R-CNN+", "description": "Modified Mask R-CNN variant evaluated in the study." }
+      ]
+    },
+    "evaluation": {
+      "title": "Evaluation Strategy",
+      "classification": {
+        "title": "Classification",
+        "blurb": "Did the model correctly flag CNV-positive vs. CNV-negative images?",
+        "metrics": [
+          { "label": "Accuracy", "description": "Share of images classified correctly." },
+          { "label": "AUC", "description": "How well the model separates the two classes." },
+          { "label": "False Negative Rate", "description": "CNV cases the model missed." },
+          { "label": "False Positive Rate", "description": "Normal scans wrongly flagged as CNV." }
+        ]
+      },
+      "segmentation": {
+        "title": "Segmentation",
+        "blurb": "Once flagged, how precisely did the model outline the CNV region?",
+        "metrics": [
+          { "label": "Precision", "description": "Of the pixels marked CNV, how many really were." },
+          { "label": "Recall", "description": "Of the true CNV pixels, how many were found." },
+          { "label": "F1-score (Dice)", "description": "Balance between precision and recall." },
+          { "label": "IoU", "description": "Overlap between predicted and true CNV region." }
+        ]
+      }
+    },
+    "results": {
+      "title": "Results — Classification",
+      "intro": "All six models were evaluated on the same 500-image balanced set. DeepLabV3+ and DeepLabV3++ came out on top.",
+      "chartCaption": "Classification accuracy by model (%)",
+      "highlight": "DeepLabV3+ and DeepLabV3++ achieved the highest classification accuracy and AUC — both at 99.4%, with a 0% false negative rate and a low 1.2% false positive rate."
+    },
+    "segmentationResults": {
+      "title": "Segmentation Comparison",
+      "intro": "Detecting CNV is only half the task — the model also has to outline it accurately. This is where the models pulled apart the most.",
+      "spotlightLabel": "DeepLabV3++ localization performance",
+      "tableCaption": "Segmentation performance across all six models (%)",
+      "imageCaption": "Original · Ground Truth · six model outputs, one representative case.",
+      "finding": "DeepLabV3++ achieved the strongest overall localization performance — the highest F1-score and IoU among all six models, with recall competitive with the best-performing alternatives."
+    },
+    "whyDeepLab": {
+      "title": "Why DeepLabV3++?",
+      "intro": "Considering both performance and training efficiency, DeepLabV3++ emerged as the strongest overall candidate in this study.",
+      "reasons": [
+        "Strong classification performance, tied for the best in the study",
+        "Highest overall segmentation F1-score and IoU",
+        "High recall — competitive with the best models at finding true CNV regions",
+        "Effective multi-scale feature extraction",
+        "Comparatively short training time"
+      ],
+      "tradeoff": ["Classification Performance", "Segmentation Performance", "Training Efficiency"],
+      "tradeoffResult": "DeepLabV3++",
+      "trainingTimeCaption": "Training time by model (minutes) — lower is faster",
+      "trainingNote": "DeepLabV3++ required substantially less training time than U-Net while achieving stronger overall classification and segmentation performance."
+    },
+    "limitations": {
+      "title": "Where the Models Struggled",
+      "intro": "Strong headline metrics don't tell the whole story. Looking closely at individual cases surfaced real, recurring failure patterns across every model — not just DeepLabV3++.",
+      "items": [
+        "Under-segmentation of low-contrast CNV regions",
+        "Difficulty delineating precise lesion boundaries",
+        "False positives on structures that resemble CNV, like the RPE layer",
+        "Conflicting segmentations between models on the same image — a sign of instability",
+        "Sensitivity to image format (grayscale vs. RGB), especially for models pretrained on natural images",
+        "Small or low-contrast CNV regions were sometimes missed"
+      ],
+      "errorLegend": [
+        { "label": "True Positive", "swatch": "#6FCF97" },
+        { "label": "False Positive", "swatch": "#5B8DEF" },
+        { "label": "False Negative", "swatch": "#EB5757" }
+      ]
+    },
+    "future": {
+      "title": "Future Research Directions",
+      "items": [
+        "Ensemble / model-fusion approaches for more stable predictions",
+        "Conditional Random Fields (CRFs) to sharpen mask boundaries",
+        "Morphological operations and shape priors",
+        "Transformer or hybrid CNN-transformer architectures",
+        "Explainability tools — Grad-CAM and SHAP — to build clinical trust",
+        "Expanded datasets to improve model robustness and reliability."
+      ]
+    },
+    "publication": {
+      "title": "Publication",
+      "journal": "Science & Technology Asia",
+      "volume": "Vol. 30 No. 3",
+      "dateRange": "July – September 2025",
+      "pages": "Pages 40–50",
+      "authorsLabel": "Authors",
+      "cta": "View Publication"
+    },
+    "bubble": ["Curious by nature.", "Driven by evidence."]
+  }
+}

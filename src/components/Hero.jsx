@@ -1,7 +1,7 @@
-import { profile } from '../data/profile'
-import { LinkedInIcon, GitHubIcon, MailIcon, SparkleIcon, CurvedArrowIcon } from './icons'
+import { useTranslation } from 'react-i18next'
+import { useLocalizedData } from '../data/localized'
+import { LinkedInIcon, GitHubIcon, MailIcon } from './icons'
 import heroFrame from '../assets/hero-frame.svg'
-import hiImBubble from '../assets/hi-im-bubble.svg'
 
 // heroFrame is a direct "Copy as SVG" export from the Figma file (Home group), cropped to just
 // the photo cluster and stripped of the placeholder photo pixels — the search/heart icons, the
@@ -12,9 +12,11 @@ const PHOTO_HOLE = { left: '18.37%', top: '5.86%', width: '63.74%', height: '88.
 
 // % width of the left (text) column on md+ screens; the right (photo) column takes the rest.
 // Adjust this single number to rebalance the two sides.
-const HERO_LEFT_WIDTH = 45
+const HERO_LEFT_WIDTH = 50
 
 export default function Hero() {
+  const { t } = useTranslation()
+  const { profile } = useLocalizedData()
   return (
     <section
       id="home"
@@ -50,7 +52,7 @@ export default function Hero() {
 
         {/* md:pl matches the left edge of "Understanding" traced inside the headline SVG above
             (getBBox x=40.9 of its 598-wide viewBox, i.e. 40.9/598 ≈ 6.84%) */}
-        <div className="mt-8 max-w-[30rem] text-[18px] font-medium leading-[32px] text-[#54575f] md:pl-[6.84%]">
+        <div className="mt-8 max-w-[36rem] text-[18px] font-medium leading-[32px] text-[#54575f] md:pl-[6.84%]">
           {profile.bio.map((line) => (
             <p key={line}>{line}</p>
           ))}
@@ -87,12 +89,12 @@ export default function Hero() {
         {profile.openToOpportunities && (
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-1.5 text-base font-medium text-black md:ml-[6.84%]">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Open to opportunities
+            {t('hero.openToOpportunities')}
           </div>
         )}
       </div>
 
-      <div className="relative">
+      <div className="relative w-full">
         {/* aspect-ratio matches the exported Figma frame (695×580) so the photo hole below lines up */}
         <div className="relative mx-auto aspect-[695/580] w-full max-w-[420px] sm:max-w-[480px] md:max-w-[700px]">
           <div
