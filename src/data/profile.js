@@ -24,7 +24,7 @@ export const profile = {
 
   photo: profilePhoto,
 
-  // Résumé lives at public/resume.pdf; BASE_URL keeps the link correct under /portfolio/.
+  // Résumé lives at public/resume.pdf.
   resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 
   links: {
