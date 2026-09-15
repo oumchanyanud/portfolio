@@ -8,6 +8,8 @@ import About from './components/About'
 import Contact from './components/Contact'
 import ProjectDetail from './components/ProjectDetail'
 import AllProjects from './components/AllProjects'
+import UsabilityTesting from './components/UsabilityTesting'
+import CnvResearch from './components/CnvResearch'
 
 // Scroll to the hash target on navigation (e.g. a "← Back" link to /#work),
 // or to the top when moving to a plain route.
@@ -63,6 +65,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<AllProjects />} />
+        <Route path="/work/usability-testing" element={<UsabilityTesting />} />
+        <Route path="/work/cnv-detection" element={<CnvResearch />} />
         <Route path="/work/:slug" element={<ProjectDetail />} />
       </Routes>
     </div>

@@ -36,6 +36,14 @@ function localize(lang) {
   const projects = enProjects.map((p) => {
     const t = th.projects[p.slug]
     if (!t) return p
+
+    // Bespoke-layout projects (e.g. Usability Testing, CNV Detection) have no
+    // `detail` object — their case-study content lives in i18n instead — so only
+    // the card-level fields get overlaid here.
+    if (!p.detail) {
+      return { ...p, subtitle: t.subtitle, description: t.description, footerBubble: t.footerBubble }
+    }
+
     const td = t.detail
     const ds = p.detail.designSystem
     return {

@@ -64,7 +64,7 @@ export default function AllProjects() {
           </div>
         ) : (
           <div className="mt-8 rounded-2xl border-2 border-dashed border-[#d9d6e4] bg-[#fbfbfd] px-6 py-16 text-center">
-            <p className="font-playful text-2xl font-bold text-primary">{t('work.comingSoonTitle')}</p>
+            <p className="text-2xl font-bold text-primary">{t('work.comingSoonTitle')}</p>
             <p className="mt-2 text-sm font-medium text-[#7f7f90]">{t('work.comingSoonBody')}</p>
           </div>
         )}

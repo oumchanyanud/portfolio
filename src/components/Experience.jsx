@@ -44,7 +44,7 @@ export default function Experience() {
             fill="none"
           >
             <path
-              d="M-12 30c6 0 10 -18 26 -18"
+              d="M-12 30c7.32 0 12.2 -18 31.72 -18"
               stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"
@@ -52,7 +52,7 @@ export default function Experience() {
               vectorEffect="non-scaling-stroke"
             />
             <path
-              d="M14 12c15 0 15 22 30 22s15 -22 30 -22s15 22 30 22s15 -22 30 -22"
+              d="M19.72 12c10.77 0 10.77 22 21.53 22s10.77 -22 21.53 -22s10.07 22 20.14 22s10.07 -22 20.14 -22"
               stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"

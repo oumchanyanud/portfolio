@@ -9,11 +9,12 @@
   --color-product-design: #37a176;
   --color-academic-research: #4360d4;
 
-  /* Inter renders Latin; it has no Thai glyphs, so Thai text falls through to
-     Playpen Sans Thai (same two fonts the English site loads). */
-  --font-sans: "Inter", "Playpen Sans Thai", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Inter renders Latin but has no Thai glyphs, so Thai body text falls through to
+     Noto Sans Thai — a plain, neutral match for Inter's tone. Playpen Sans Thai is
+     reserved for project names and the bottom banner (font-playful), in both languages. */
+  --font-sans: "Inter", "Noto Sans Thai", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-playful: "Playpen Sans Thai", "Inter", ui-sans-serif, sans-serif;
-  --font-logo: "Inter", "Playpen Sans Thai", ui-sans-serif, system-ui, sans-serif;
+  --font-logo: "Inter", "Noto Sans Thai", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

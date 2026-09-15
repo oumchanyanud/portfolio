@@ -5,9 +5,9 @@ export const experience = [
   {
     id: 1,
     date: '2026',
-    role: 'UX Research Intern',
+    role: 'User Experience Research Intern',
     company: 'TMBThanachart Bank (ttb)',
-    tag: 'UX Research',
+    tag: 'User Experience Research',
     icon: 'bank',
     color: 'purple',
   },

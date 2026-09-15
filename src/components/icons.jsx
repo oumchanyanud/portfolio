@@ -31,7 +31,7 @@ export function GitHubIcon(props) {
   )
 }
 
-// mingcute:bank-line — matches the Figma "UX Research Intern" timeline icon.
+// mingcute:bank-line — matches the Figma "User Experience Research Intern" timeline icon.
 export function BankIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>

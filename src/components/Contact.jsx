@@ -90,7 +90,7 @@ export default function Contact({ bubbleText, className = '', variant = 'home' }
               {label}
             </a>
           ))}
-          <FooterSquiggleDoodle className="pointer-events-none absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-primary sm:block md:-right-6" />
+          <FooterSquiggleDoodle className="pointer-events-none absolute -right-3 -top-2 hidden h-6 w-6 text-primary sm:block md:-right-6" />
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { ArrowRightIcon } from './icons'
 
 const categoryStyles = {
-  'UX Research': { text: 'text-ux-research', button: 'bg-[#9477EF] text-white' },
+  'User Experience Research': { text: 'text-ux-research', button: 'bg-[#9477EF] text-white' },
   'Product Design': { text: 'text-product-design', button: 'bg-[#83D3AE] text-white' },
   'Academic Research': { text: 'text-academic-research', button: 'bg-[#8099FD] text-white' },
 }

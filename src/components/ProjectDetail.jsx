@@ -10,7 +10,7 @@ import platformIcon from '../assets/project-detail/platform.png'
 import toolsIcon from '../assets/project-detail/tools.png'
 
 const categoryDot = {
-  'UX Research': 'bg-ux-research',
+  'User Experience Research': 'bg-ux-research',
   'Product Design': 'bg-product-design',
   'Academic Research': 'bg-academic-research',
 }
@@ -194,7 +194,7 @@ export default function ProjectDetail() {
 
               <DsCard title={ds.gallery.label} blurb={ds.gallery.blurb}>
                 {ds.gallery.kind === 'icon' ? (
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-6 flex flex-wrap justify-center gap-3">
                     {ds.gallery.images.map((img, i) => (
                       <img
                         key={img.src}
@@ -216,7 +216,7 @@ export default function ProjectDetail() {
                           key={img.src}
                           src={img.src}
                           alt={`${project.title} ${ds.gallery.label} ${i + 1}`}
-                          className="-mx-6 -mb-6 w-[calc(100%+3rem)] rounded-b-[24px] object-cover sm:-mx-9 sm:-mb-9 sm:w-[calc(100%+4.5rem)]"
+                          className="-mx-6 -mb-6 w-[calc(100%+3rem)] max-w-none rounded-b-[24px] object-cover sm:-mx-9 sm:-mb-9 sm:w-[calc(100%+4.5rem)]"
                           style={{ height: img.h }}
                         />
                       ) : (

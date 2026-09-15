@@ -12,7 +12,7 @@ const PHOTO_HOLE = { left: '18.37%', top: '5.86%', width: '63.74%', height: '88.
 
 // % width of the left (text) column on md+ screens; the right (photo) column takes the rest.
 // Adjust this single number to rebalance the two sides.
-const HERO_LEFT_WIDTH = 45
+const HERO_LEFT_WIDTH = 50
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -52,7 +52,7 @@ export default function Hero() {
 
         {/* md:pl matches the left edge of "Understanding" traced inside the headline SVG above
             (getBBox x=40.9 of its 598-wide viewBox, i.e. 40.9/598 ≈ 6.84%) */}
-        <div className="mt-8 max-w-[30rem] text-[18px] font-medium leading-[32px] text-[#54575f] md:pl-[6.84%]">
+        <div className="mt-8 max-w-[36rem] text-[18px] font-medium leading-[32px] text-[#54575f] md:pl-[6.84%]">
           {profile.bio.map((line) => (
             <p key={line}>{line}</p>
           ))}

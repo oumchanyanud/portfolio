@@ -1,0 +1,46 @@
+<svg width="760" height="338" viewBox="0 0 760 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="760" y2="338" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B6FE8" />
+      <stop offset="1" stop-color="#2E2166" />
+    </linearGradient>
+  </defs>
+  <rect width="760" height="338" fill="url(#bg)" />
+
+  <!-- soft background blobs -->
+  <circle cx="80" cy="270" r="150" fill="#FFFFFF" opacity="0.06" />
+  <circle cx="690" cy="40" r="120" fill="#FFFFFF" opacity="0.07" />
+  <circle cx="600" cy="300" r="70" fill="#FFFFFF" opacity="0.05" />
+
+  <!-- device / prototype frame -->
+  <g opacity="0.95">
+    <rect x="290" y="86" width="150" height="180" rx="16" stroke="white" stroke-width="4" fill="rgba(255,255,255,0.06)" />
+    <line x1="290" y1="126" x2="440" y2="126" stroke="white" stroke-width="3" opacity="0.7" />
+    <rect x="310" y="146" width="110" height="10" rx="5" fill="white" opacity="0.55" />
+    <rect x="310" y="168" width="80" height="10" rx="5" fill="white" opacity="0.4" />
+    <rect x="310" y="200" width="90" height="26" rx="13" fill="white" opacity="0.25" />
+  </g>
+
+  <!-- magnifying glass observing the prototype -->
+  <g transform="translate(430,190)">
+    <circle r="46" stroke="white" stroke-width="6" fill="rgba(255,255,255,0.08)" />
+    <line x1="33" y1="33" x2="66" y2="66" stroke="white" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  <!-- hesitation / behaviour dots trail -->
+  <circle cx="230" cy="230" r="5" fill="white" opacity="0.5" />
+  <circle cx="250" cy="245" r="4" fill="white" opacity="0.4" />
+  <circle cx="266" cy="262" r="3" fill="white" opacity="0.3" />
+
+  <!-- SEQ style scale ticks -->
+  <g transform="translate(500,250)" opacity="0.8">
+    <line x1="0" y1="0" x2="150" y2="0" stroke="white" stroke-width="3" stroke-linecap="round" />
+    <circle cx="0" cy="0" r="5" fill="white" />
+    <circle cx="50" cy="0" r="5" fill="white" opacity="0.7" />
+    <circle cx="100" cy="0" r="5" fill="white" opacity="0.5" />
+    <circle cx="150" cy="0" r="5" fill="white" opacity="0.35" />
+  </g>
+
+  <!-- small doodle squiggle accent -->
+  <path d="M110 90c-6 4-10 14-8 22 2 8 12 4 12-4s-8-10-4-18" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5" />
+</svg>

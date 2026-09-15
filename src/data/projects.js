@@ -9,6 +9,11 @@
 //   keyFeatures[]: { title, description, image (first), images[] }
 //   designSystem: { color:{blurb,swatches[]}, typography:{blurb,font,image},
 //                   uiElements:{blurb,images[]}, gallery:{label:'Illustrations'|'Icons',blurb,images[]} }
+//
+// `detail` (and the generic /work/:slug ProjectDetail template) is only for the app
+// case-study layout above. A project with its own bespoke layout — e.g. Usability
+// Testing — skips `detail`, points `link` at an explicit route in App.jsx, and owns
+// its content directly in that route's component instead of this data file.
 
 // --- SIIT Super App ---
 import siitCard from '../assets/projects/siit/card.webp'
@@ -79,10 +84,16 @@ import managingIcons1 from '../assets/projects/managing/icons-1.webp'
 import managingIcons2 from '../assets/projects/managing/icons-2.webp'
 import managingIcons3 from '../assets/projects/managing/icons-3.webp'
 
+// --- Usability Testing (User Experience Research) ---
+import usabilityTestingCard from '../assets/projects/usability-testing/card.svg'
+
+// --- CNV Detection in OCT (Academic Research) ---
+import cnvCard from '../assets/projects/cnv-detection/card.webp'
+
 // Filter tabs on the home + all-projects pages. Only categories in `availableCategories`
 // have real projects today; the rest render a "Coming soon" state when selected.
-export const projectCategories = ['UX Research', 'Product Design', 'Academic Research']
-export const availableCategories = ['Product Design']
+export const projectCategories = ['User Experience Research', 'Product Design', 'Academic Research']
+export const availableCategories = ['User Experience Research', 'Product Design', 'Academic Research']
 
 export const projects = [
   {
@@ -99,7 +110,7 @@ export const projects = [
     footerBubble: ['Everything students need,', 'in one place!'],
     detail: {
       hero: siitHero,
-      role: 'UX/UI Designer',
+      role: 'User Experience/User Interface Designer',
       course: 'Human Interface Design',
       platform: 'Mobile Application',
       tools: 'Figma, Procreate',
@@ -171,7 +182,7 @@ export const projects = [
     footerBubble: ['Plan together. Split smarter.'],
     detail: {
       hero: friendsHero,
-      role: 'UX/UI Designer',
+      role: 'User Experience/User Interface Designer',
       course: 'System Analysis and Design',
       platform: 'Mobile Application',
       tools: 'Figma',
@@ -222,9 +233,9 @@ export const projects = [
           label: 'Illustrations',
           kind: 'illustration',
           blurb: 'Playful visuals make expense sharing feel more approachable.',
-          gap: 19,
+          gap: 4,
           images: [
-            { src: friendsIllustrations1, w: 172.7, h: 129.82 },
+            { src: friendsIllustrations1, w: 95, h: 71.5 },
             { src: friendsIllustrations2, w: 172.7, h: 129.82 },
           ],
         },
@@ -244,7 +255,7 @@ export const projects = [
     footerBubble: ['Track progress.', 'Reach your goals!'],
     detail: {
       hero: actTrackHero,
-      role: 'UX/UI Designer',
+      role: 'User Experience/User Interface Designer',
       course: 'Cloud-Based Application',
       platform: 'Web Application',
       tools: 'Figma, Procreate',
@@ -319,7 +330,7 @@ export const projects = [
     footerBubble: ['Manage better.', 'Work together!'],
     detail: {
       hero: managingHero,
-      role: 'UX/UI Designer, Frontend Developer',
+      role: 'User Experience/User Interface Designer, Frontend Developer',
       course: 'Database Lab',
       platform: 'Web Application',
       tools: 'Figma',
@@ -385,5 +396,29 @@ export const projects = [
         },
       },
     },
+  },
+  {
+    slug: 'usability-testing',
+    category: 'User Experience Research',
+    title: 'Usability Testing',
+    titleAccent: null,
+    subtitle: 'User Experience Research Internship at ttb',
+    description:
+      'Supporting usability testing for digital banking experiences — from research prep to stakeholder presentation.',
+    image: usabilityTestingCard,
+    link: '/work/usability-testing',
+    footerBubble: ['Understanding people.', 'Designing better experiences.'],
+  },
+  {
+    slug: 'cnv-detection',
+    category: 'Academic Research',
+    title: 'Automated CNV Detection',
+    titleAccent: null,
+    subtitle: 'Deep Learning for Retinal OCT Imaging',
+    description:
+      'Comparing six deep-learning architectures to automatically detect and localize choroidal neovascularization in retinal OCT scans.',
+    image: cnvCard,
+    link: '/work/cnv-detection',
+    footerBubble: ['Research first,', 'design follows.'],
   },
 ]
